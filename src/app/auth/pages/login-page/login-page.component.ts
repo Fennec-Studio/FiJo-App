@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class LoginPageComponent {
   }
 
   constructor(
+    private _authService: AuthService,
     private _snackBar: MatSnackBar
   ) { }
 
@@ -21,6 +23,7 @@ export class LoginPageComponent {
     if(this.validateData(this.loginFormModel)) {
       console.log('loginFormModel', this.loginFormModel);
       //TODO send data to server
+      console.log(this._authService.validateLoginData(this.loginFormModel));
     }
   }
 
