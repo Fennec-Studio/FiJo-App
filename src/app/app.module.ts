@@ -5,13 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
-import { LandingPageComponent } from './landing/pages/landing/landing-page/landing-page.component';
 import { SharedModule } from './shared/shared.module';
+import { LandingModule } from './landing/landing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,6 +18,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,
     AuthModule,
     SharedModule,
+    LandingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
