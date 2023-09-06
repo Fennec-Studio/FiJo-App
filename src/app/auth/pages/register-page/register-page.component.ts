@@ -14,6 +14,8 @@ export class RegisterPageComponent {
     firstName: '',
     lastName: '',
   }
+  public showPassword = false
+  public showconfirmPassword = false
 
   constructor(
     private _snackBar: MatSnackBar
@@ -59,5 +61,13 @@ export class RegisterPageComponent {
       verticalPosition: 'bottom',
       duration: 5000,
     })
+  }
+
+  public togglePasswordVisibility(value: number): void {
+    if(value === 1) {
+      this.showPassword = !this.showPassword
+    } else {
+      this.showconfirmPassword = !this.showconfirmPassword
+    }
   }
 }

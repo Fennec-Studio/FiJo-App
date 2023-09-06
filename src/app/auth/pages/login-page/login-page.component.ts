@@ -13,6 +13,7 @@ export class LoginPageComponent {
     email: '',
     password: '',
   }
+  public showPassword = false
 
   constructor(
     private _authService: AuthService,
@@ -53,5 +54,9 @@ export class LoginPageComponent {
       verticalPosition: 'bottom',
       duration: 5000,
     })
+  }
+
+  public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword
   }
 }
