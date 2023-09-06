@@ -8,6 +8,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     HttpClientModule,
     FormsModule,
     MatSnackBarModule,
+    RouterModule
   ],
   exports: [
     LoginPageComponent
