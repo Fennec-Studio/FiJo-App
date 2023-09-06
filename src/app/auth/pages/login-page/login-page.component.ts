@@ -23,7 +23,6 @@ export class LoginPageComponent {
     if(this.validateData(this.loginFormModel)) {
       console.log('loginFormModel', this.loginFormModel);
       //TODO send data to server
-      console.log(this._authService.validateLoginData(this.loginFormModel));
     }
   }
 
