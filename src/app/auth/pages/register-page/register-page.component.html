@@ -1,1 +1,103 @@
-<p>register-page works!</p>
+<div class="h-full md:w-full flex flex-row">
+  <!-- LEFT SIDE -->
+  <div class="bg-Bright-Cyan hidden md:flex md:w-1/2 flex-col items-center justify-center">
+    <h2 class="w-10/12 text-4xl shadow-sm font-Poppins font-medium text-white mb-10">
+      Aquí iría un slogan bien HD
+    </h2>
+    <img src="/assets/img/register_aside.svg" class="w-96">
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="w-full h-full flex flex-col justify-center items-center bg-slate-100 login-bg-pattern">
+    <!-- IMG HEADER -->
+    <img
+      class="w-1/2 md:h-1/5"
+      src="/assets/img/register_header.svg"
+      alt="Login">
+    <!-- HEADER TEXT -->
+    <h2
+      class="mt-16 text-slate-800 font-Poppins font-medium text-3xl">
+      Crear una cuenta
+    </h2>
+    <!-- LOGIN FORM -->
+
+    <form (ngSubmit)="onRegisterSubmit()">
+      <div
+        class="mt-10"
+        id="registerForms">
+        <div class="flex flex-row justify-between">
+
+          <div class="w-[155px] md:w-[185px]">
+            <input
+              type="text"
+              name="email"
+              [(ngModel)] = "registerFormModel.firstName"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Nombre(s)">
+          </div>
+
+          <div class="w-[155px] md:w-[185px]">
+            <input
+              type="text"
+              name="email"
+              [(ngModel)] = "registerFormModel.lastName"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Apellidos">
+          </div>
+        </div>
+
+        <div class="relative w-80 md:w-96 mt-5">
+          <input
+            type="text"
+            name="email"
+            [(ngModel)] = "registerFormModel.email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="correo@electronico.com">
+        </div>
+
+        <div class="relative w-80 md:w-96 mt-5">
+          <input
+            type="password"
+            name="password"
+            [(ngModel)] = "registerFormModel.password"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="Contraseña">
+          <button
+            type="button"
+            class="absolute right-0 inset-y-0 pr-2.5">
+            <svg class="w-6 h-6 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
+              <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="relative w-80 md:w-96 mt-5">
+          <input
+            type="password"
+            name="password"
+            [(ngModel)] = "registerFormModel.confirmPassword"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="Confirmar contraseña">
+          <button
+            type="button"
+            class="absolute right-0 inset-y-0 pr-2.5">
+            <svg class="w-6 h-6 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
+              <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- CONTROL BUTTONS -->
+      <div class="w-80 md:w-96 mt-5">
+        <button
+          type="submit"
+          class="font-bold text-white bg-Bright-Cyan hover:bg-Intense-Turquoise focus:ring-4 focus:ring-blue-300 rounded-lg text-sm w-full py-2.5">
+          Crear cuenta
+        </button>
+      </div>
+    </form>
+    <div class="mt-5 flex">
+      <p class="text-sm text-slate-800 font-Poppins mr-2">¿Ya tienes cuenta?</p> <a class="text-sm font-medium text-Intense-Turquoise font-Poppins hover:text-Serene-Blue" href="#">Inicia sesión</a>
+    </div>
+  </div>
+</div>
