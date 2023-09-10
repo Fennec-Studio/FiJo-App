@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-page',
@@ -18,13 +19,14 @@ export class RegisterPageComponent {
   public showconfirmPassword = false
 
   constructor(
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private _router: Router,
   ) { }
 
   public onRegisterSubmit(): void {
     if(this.validateData(this.registerFormModel)) {
       console.log('registerFormModel', this.registerFormModel);
-      //TODO send data to server
+      this._router.navigate(['/register/personal'])
     }
   }
 
