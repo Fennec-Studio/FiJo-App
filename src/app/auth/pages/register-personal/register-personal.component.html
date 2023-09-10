@@ -1,0 +1,99 @@
+<div class="h-full md:w-full flex flex-row">
+  <!-- LEFT SIDE -->
+  <div class="bg-Bright-Cyan hidden md:flex md:w-1/2 flex-col items-center justify-center">
+    <h2 class="w-10/12 text-4xl shadow-sm font-Poppins font-medium text-white mb-10">
+      Aquí iría un slogan bien HD
+    </h2>
+    <img src="/assets/img/register_aside.svg" class="w-96">
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="w-full h-full flex flex-col justify-center items-center bg-slate-100 login-bg-pattern">
+    <!-- IMG HEADER -->
+    <img
+      class="w-1/2 md:h-1/5"
+      src="/assets/img/persInfo_header.svg"
+      alt="Login">
+    <!-- HEADER TEXT -->
+    <h2
+      class="mt-16 text-slate-800 font-Poppins font-medium text-3xl">
+      Datos personales
+    </h2>
+    <!-- LOGIN FORM -->
+
+    <form (ngSubmit)="onRegisterSubmit()">
+      <div
+        class="mt-10"
+        id="registerForms">
+
+        <div class="relative w-80 md:w-96">
+          <input
+            type="text"
+            name="address"
+            [(ngModel)] = "personalInfoFormModel.address"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="Dirección">
+        </div>
+
+        <div class="flex flex-row justify-between mt-5">
+          <div class="w-[155px] md:w-[185px]">
+            <input
+              type="text"
+              name="city"
+              [(ngModel)] = "personalInfoFormModel.city"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Ciudad">
+          </div>
+
+          <div class="w-[155px] md:w-[185px]">
+            <input
+              type="text"
+              name="state"
+              [(ngModel)] = "personalInfoFormModel.state"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Estado">
+          </div>
+        </div>
+
+        <div class="flex flex-row justify-between mt-5">
+          <div class="w-[155px] md:w-[185px]">
+            <input
+              type="text"
+              name="zipCode"
+              [(ngModel)] = "personalInfoFormModel.zipCode"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Código postal">
+          </div>
+
+          <div class="w-[155px] md:w-[185px]">
+            <input
+              type="text"
+              name="country"
+              [(ngModel)] = "personalInfoFormModel.country"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              placeholder="País">
+          </div>
+        </div>
+
+      </div>
+      <!-- CONTROL BUTTONS -->
+      <div class="w-80 md:w-96 mt-5">
+        <button
+          type="submit"
+          class="font-bold text-white bg-Bright-Cyan hover:bg-Intense-Turquoise focus:ring-4 focus:ring-blue-300 rounded-lg text-sm w-full py-2.5">
+          Crear cuenta
+        </button>
+      </div>
+    </form>
+    <div class="mt-5 flex">
+      <p class="text-sm text-slate-800 font-Poppins mr-2">
+        ¿Ya tienes cuenta?
+      </p>
+      <a
+        [routerLink]="['/login']" routerLinkActive="router-link-active"
+        class="text-sm font-medium text-Intense-Turquoise font-Poppins hover:text-Serene-Blue">
+        Inicia sesión
+      </a>
+    </div>
+  </div>
+</div>
