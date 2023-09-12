@@ -11,6 +11,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { RouterModule } from '@angular/router';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { RegisterPersonalComponent } from './pages/register-personal/register-personal.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,9 @@ import { RegisterPersonalComponent } from './pages/register-personal/register-pe
   exports: [
     LoginPageComponent,
     LoginFormComponent
+  ],
+  providers: [
+    AuthService
   ]
 })
 export class AuthModule { }
