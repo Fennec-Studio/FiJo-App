@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -13,13 +15,22 @@ export class LoginFormComponent {
   public showPassword = false
 
   constructor(
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private _authService: AuthService,
+    private _router: Router
   ) { }
 
   public onLoginSubmit(): void {
     if(this.validateData(this.loginFormModel)) {
-      console.log('loginFormModel', this.loginFormModel);
-      //TODO send data to server
+      this._authService.validateUserLogin(this.loginFormModel).subscribe((response: any) => {
+        if(response.status == 200) {
+          this.openSnackBar(response.message)
+          this._authService.storeDataSession(response.body)
+          this._router.navigate(['/'])
+        } else {
+          this.openSnackBar(response.message)
+        }
+      })
     }
   }
 
@@ -48,7 +59,7 @@ export class LoginFormComponent {
     this._snackBar.open(message, 'Aceptar', {
       horizontalPosition: 'center',
       verticalPosition: 'bottom',
-      duration: 5000,
+      duration: 3000,
     })
   }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register-page',
@@ -21,7 +22,15 @@ export class RegisterPageComponent {
   constructor(
     private _snackBar: MatSnackBar,
     private _router: Router,
+    private _authService: AuthService
   ) { }
+
+
+  ngOnInit(): void {
+    if(!this._authService.isSessionExpired()) {
+      this._router.navigate(['/'])
+    }
+  }
 
   public onRegisterSubmit(): void {
     if(this.validateData(this.registerFormModel)) {
