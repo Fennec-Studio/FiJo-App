@@ -14,4 +14,23 @@ export interface UserAccount {
   state?: string;
   zipCode?: string;
   country?: string;
+  age?: number;
+  gender?: number;
+  personal?: PersonalInformation;
+  experience?: Experience[];
+}
+
+export interface PersonalInformation {
+  career?: string;
+  salary?: number;
+  about?: string;
+}
+
+export interface Experience {
+  business?: string;
+  position?: string;
+  description?: string;
+  start?: Date;
+  end?: Date;
+  current?: boolean;
 }
