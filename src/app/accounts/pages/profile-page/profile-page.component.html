@@ -9,13 +9,13 @@
           class="w-60"
           src="/assets/img/login_header.svg"
           alt="Profile picture">
-        <h3 class="font-medium text-xl">Joseph Ian Gonzalez Cabrales</h3>
+        <h3 class="font-medium text-xl">{{AccountData.firstName + " " + AccountData.lastName}}</h3>
         <div class="w-40 flex flex-row justify-between text-base text-slate-700">
-          <p>Hombre</p>
+          <p>{{AccountData.gender == 0 ? "Hombre" : "Mujer"}}</p>
           <p> • </p>
-          <p>24 años</p>
+          <p>{{AccountData.age}} años</p>
         </div>
-        <p class="text-base text-slate-700">Tampico, TAM</p>
+        <p class="text-base text-slate-700">{{AccountData.city}}, {{AccountData.state}}</p>
       </div>
 
     </div>
@@ -23,8 +23,8 @@
     <div class="bg-white rounded-md shadow-md p-3 w-full transform hover:md:-translate-y-1 hover:md:shadow-lg">
       <h2 class="text-xl font-bold text-Bright-Cyan">Datos de contacto</h2>
       <div class="flex flex-col">
-        <p>+52 1 (833) 151 4894</p>
-        <p>joseph220199@gmail.com</p>
+        <p>{{AccountData.phone}}</p>
+        <p>{{AccountData.email}}</p>
       </div>
     </div>
 
@@ -35,11 +35,11 @@
       <div class="flex flex-col space-y-3">
         <div class="flex flex-col">
           <p class="text-xs text-slate-400">Puesto</p>
-          <p class="text-base font-light">Desarrollador de software</p>
+          <p class="text-base font-light">{{AccountData.personal}}</p>
         </div>
         <div class="flex flex-col">
           <p class="text-xs text-slate-400">Salario aproximado</p>
-          <p class="text-base font-light">$999,999,999</p>
+          <p class="text-base font-light">${{AccountData.personal?.salary}}</p>
         </div>
         <div class="flex flex-col">
           <p class="text-xs text-slate-400">Acerca de mi</p>
@@ -77,6 +77,5 @@
 
       </div>
     </div>
-
   </div>
 </div>
