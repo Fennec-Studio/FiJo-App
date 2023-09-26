@@ -38,17 +38,15 @@
         <div class="flex flex-col space-y-3">
           <div class="flex flex-col">
             <p class="text-xs text-slate-400">Puesto</p>
-            <p class="text-base font-light">Prueba</p>
+            <p class="text-base font-light">{{AccountData.career}}</p>
           </div>
           <div class="flex flex-col">
             <p class="text-xs text-slate-400">Salario aproximado</p>
-            <p class="text-base font-light">${{AccountData.personal?.salary}}</p>
+            <p class="text-base font-light">${{AccountData.salary}}</p>
           </div>
           <div class="flex flex-col">
             <p class="text-xs text-slate-400">Acerca de mi</p>
-            <p class="text-base font-light line-clamp-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, deleniti nemo? Tempora eligendi unde quia ipsum ratione velit consequatur aliquid amet soluta rem fugit praesentium laudantium architecto nostrum, doloremque sunt.
-            Asperiores aut laudantium repudiandae officia iste possimus nemo voluptatibus nulla beatae fugit, itaque doloremque nihil vitae necessitatibus deserunt iure totam voluptatum quia illum atque cum! In soluta perferendis inventore eveniet.
-            Doloribus repudiandae voluptatibus nemo impedit corrupti nulla ad. Perferendis, accusantium vitae repudiandae natus quae explicabo. Molestias iusto minima illo totam laudantium assumenda nesciunt labore, provident natus earum eos consequuntur quibusdam!</p>
+            <p class="text-base font-light line-clamp-5">{{AccountData.about}}</p>
           </div>
         </div>
       </div>
@@ -57,27 +55,20 @@
         <h2 class="text-xl font-bold text-Bright-Cyan">
           Experiencia profesional
         </h2>
-        <div class="flex flex-col space-y-6">
+        <div
+          *ngFor="let exp of AccountData.experience;
+          let last = last;
+          let first = first"
+          class="flex flex-col space-y-6">
           <div class="flex flex-col">
-            <p class="text-base font-light">Desarrollador frontend en Nombre de la empresa S.A. de C.V.</p>
-            <p class="text-xs font-light text-slate-400 mb-2">Enero 1999 - Actual</p>
+            <p class="text-base font-light">{{exp.position}} en {{exp.business}}</p>
+            <p *ngIf="exp.current" class="text-xs font-light text-slate-400 mb-2">{{exp.start | dateFix}} - Actual</p>
+            <p *ngIf="!exp.current" class="text-xs font-light text-slate-400 mb-2">{{exp.start | dateFix}} - {{exp.end | dateFix}}</p>
             <p class="text-base font-light line-clamp-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, deleniti nemo? Tempora eligendi unde quia ipsum ratione velit consequatur aliquid amet soluta rem fugit praesentium laudantium architecto nostrum, doloremque sunt.
-              Asperiores aut laudantium repudiandae officia iste possimus nemo voluptatibus nulla beatae fugit, itaque doloremque nihil vitae necessitatibus deserunt iure totam voluptatum quia illum atque cum! In soluta perferendis inventore eveniet.
-              Doloribus repudiandae voluptatibus nemo impedit corrupti nulla ad. Perferendis, accusantium vitae repudiandae natus quae explicabo. Molestias iusto minima illo totam laudantium assumenda nesciunt labore, provident natus earum eos consequuntur quibusdam!
+              {{exp.description}}
             </p>
           </div>
           <hr>
-          <div class="flex flex-col">
-            <p class="text-base font-light">Desarrollador frontend en Nombre de la empresa S.A. de C.V.</p>
-            <p class="text-xs font-light text-slate-400 mb-2">Enero 1999 - Actual</p>
-            <p class="text-base font-light line-clamp-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, deleniti nemo? Tempora eligendi unde quia ipsum ratione velit consequatur aliquid amet soluta rem fugit praesentium laudantium architecto nostrum, doloremque sunt.
-              Asperiores aut laudantium repudiandae officia iste possimus nemo voluptatibus nulla beatae fugit, itaque doloremque nihil vitae necessitatibus deserunt iure totam voluptatum quia illum atque cum! In soluta perferendis inventore eveniet.
-              Doloribus repudiandae voluptatibus nemo impedit corrupti nulla ad. Perferendis, accusantium vitae repudiandae natus quae explicabo. Molestias iusto minima illo totam laudantium assumenda nesciunt labore, provident natus earum eos consequuntur quibusdam!
-            </p>
-          </div>
-
         </div>
       </div>
     </div>
