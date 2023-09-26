@@ -21,16 +21,16 @@ export interface UserAccount {
 }
 
 export interface PersonalInformation {
-  career?: string;
-  salary?: number;
-  about?: string;
+  career: string;
+  salary: number;
+  about: string;
 }
 
 export interface Experience {
-  business?: string;
-  position?: string;
-  description?: string;
-  start?: Date;
-  end?: Date;
-  current?: boolean;
+  business: string;
+  position: string;
+  description: string;
+  start: Date;
+  end: Date;
+  current: boolean;
 }
