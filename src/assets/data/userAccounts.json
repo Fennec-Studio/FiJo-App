@@ -1,20 +1,45 @@
 [
   {
-      "uuid": 1,
-      "email": "test@test.test",
-      "password": "password",
-      "firstName": "Jhon",
-      "lastName": "Doe",
-      "role": 1,
-      "status": 1,
-      "createdAt": "2023-09-04 00:00:00",
-      "updatedAt": "2023-09-05 23:59:59",
-      "phone": "+528331072074",
-      "address": "Calle prueba entre prueba1 y prueba 2 col. prba",
-      "city": "Tijuana",
-      "state": "Baja California",
-      "zipCode": "56894",
-      "country": "Mexico"
+    "uuid": 1,
+    "email": "test@test.test",
+    "password": "password",
+    "firstName": "Jhon",
+    "lastName": "Doe",
+    "role": 1,
+    "status": 1,
+    "createdAt": "2023-09-04 00:00:00",
+    "updatedAt": "2023-09-05 23:59:59",
+    "phone": "+528331072074",
+    "address": "Calle prueba entre prueba1 y prueba 2 col. prba",
+    "city": "Tijuana",
+    "state": "Baja California",
+    "zipCode": "56894",
+    "country": "Mexico",
+    "age": 24,
+    "gender": 0,
+    "personal:": {
+      "career": "Desarrollador de software",
+      "salary": 999999999,
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, deleniti nemo? Tempora eligendi unde quia ipsum ratione velit consequatur aliquid amet soluta rem fugit praesentium laudantium architecto nostrum, doloremque sunt. Asperiores aut laudantium repudiandae officia iste possimus nemo voluptatibus nulla beatae fugit, itaque doloremque nihil vitae necessitatibus deserunt iure totam voluptatum quia illum atque cum! In soluta perferendis inventore eveniet. Doloribus repudiandae voluptatibus nemo impedit corrupti nulla ad. Perferendis, accusantium vitae repudiandae natus quae explicabo. Molestias iusto minima illo totam laudantium assumenda nesciunt labore, provident natus earum eos consequuntur quibusdam!"
+    },
+    "experience": [
+      {
+        "business": "Nombre empresa uno S.A. de C.V.",
+        "position": "Desarrollador frontend",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, deleniti nemo? Tempora eligendi unde quia ipsum ratione velit consequatur aliquid amet soluta rem fugit praesentium laudantium architecto nostrum, doloremque sunt. Asperiores aut laudantium repudiandae officia iste possimus nemo voluptatibus nulla beatae fugit, itaque doloremque nihil vitae necessitatibus deserunt iure totam voluptatum quia illum atque cum! In soluta perferendis inventore eveniet. Doloribus repudiandae voluptatibus nemo impedit corrupti nulla ad. Perferendis, accusantium vitae repudiandae natus quae explicabo. Molestias iusto minima illo totam laudantium assumenda nesciunt labore, provident natus earum eos consequuntur quibusdam!",
+        "start": "2023-09-04 00:00:00",
+        "end": "",
+        "current": true
+      },
+      {
+        "business": "Nombre empresa dos S.A. de C.V.",
+        "position": "Desarrollador backend",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, deleniti nemo? Tempora eligendi unde quia ipsum ratione velit consequatur aliquid amet soluta rem fugit praesentium laudantium architecto nostrum, doloremque sunt. Asperiores aut laudantium repudiandae officia iste possimus nemo voluptatibus nulla beatae fugit, itaque doloremque nihil vitae necessitatibus deserunt iure totam voluptatum quia illum atque cum! In soluta perferendis inventore eveniet. Doloribus repudiandae voluptatibus nemo impedit corrupti nulla ad. Perferendis, accusantium vitae repudiandae natus quae explicabo. Molestias iusto minima illo totam laudantium assumenda nesciunt labore, provident natus earum eos consequuntur quibusdam!",
+        "start": "2023-09-04 00:00:00",
+        "end": "2023-09-05 23:59:59",
+        "current": false
+      }
+    ]
   },
   {
       "uuid": 2,

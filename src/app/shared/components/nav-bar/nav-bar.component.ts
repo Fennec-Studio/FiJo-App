@@ -3,8 +3,7 @@ import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'shared-nav-bar',
-  templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.css']
+  templateUrl: './nav-bar.component.html'
 })
 export class NavBarComponent {
   public scroll: boolean = false;

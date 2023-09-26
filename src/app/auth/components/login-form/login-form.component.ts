@@ -26,7 +26,7 @@ export class LoginFormComponent {
         if(response.status == 200) {
           this.openSnackBar(response.message)
           this._authService.storeDataSession(response.body)
-          this._router.navigate(['/'])
+          this._router.navigate(['/account/profile'])
         } else {
           this.openSnackBar(response.message)
         }
