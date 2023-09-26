@@ -16,14 +16,10 @@ export interface UserAccount {
   country?: string;
   age?: number;
   gender?: number;
-  personal?: PersonalInformation;
+  career?: string;
+  salary?: number;
+  about?: string;
   experience?: Experience[];
-}
-
-export interface PersonalInformation {
-  career: string;
-  salary: number;
-  about: string;
 }
 
 export interface Experience {
