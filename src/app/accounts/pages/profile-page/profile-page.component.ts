@@ -14,15 +14,15 @@ export class ProfilePageComponent {
     private _router: Router
   ) {}
 
-get AccountData() {
-  return this._accountService.getAccountData();
-}
-
-ngOnInit(): void {
-  if(this._authService.isSessionExpired()) {
-    this._router.navigate(['/login'])
-    this._authService.logout()
+  get AccountData() {
+    return this._accountService.getAccountData();
   }
-}
+
+  ngOnInit(): void {
+    if(this._authService.isSessionExpired()) {
+      this._router.navigate(['/login'])
+      this._authService.logout()
+    }
+  }
 
 }
