@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Actualizar perfil</h1>
+<div mat-dialog-content>
+  <ng-container *ngIf="data.type === 1; then profile else
+    data.type === 2 ? personal :
+    data.type === 3 ? contact : experience"></ng-container>
+</div>
+<div mat-dialog-actions class="space-x-4">
+  <button
+    (click)="closeDialog()"
+    mat-button
+    type="button"
+    class="px-5 py-2.5 text-red-900 border-2 border-red-900 hover:bg-gray-100 font-medium rounded-lg text-sm">
+    Cancelar
+  </button>
+  <button
+    mat-button
+    type="button"
+    class="px-5 py-2.5 text-white bg-Bright-Cyan hover:bg-Intense-Turquoise font-medium rounded-lg text-sm">
+    Actualizar
+  </button>
+</div>
+
+<ng-template #profile>
+
+  <div class="relative w-80 md:w-96">
+    <div
+      class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+
+    </div>
+    <input
+      type="text"
+      name="name"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5"
+      placeholder="Nombre completo"/>
+  </div>
+
+</ng-template>
+<ng-template #personal>
+  <p>Datos PERSONALES</p>
+</ng-template>
+<ng-template #contact>
+  <p>Datos CONTACTO</p>
+</ng-template>
+<ng-template #experience>|
+  <p>Datos EXPERIENCIA</p>
+</ng-template>
+
