@@ -35,7 +35,7 @@ export class RegisterPageComponent {
   public onRegisterSubmit(): void {
     if(this.validateData(this.registerFormModel)) {
       console.log('registerFormModel', this.registerFormModel);
-      this._router.navigate(['/register/personal'])
+      this._router.navigate(['/register/personal'], { state: { data: this.registerFormModel } })
     }
   }
 
