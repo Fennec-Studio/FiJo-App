@@ -22,29 +22,97 @@
 
 <ng-template #profile>
 
-  <div class="relative w-80 md:w-96">
-    <div
-      class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-
+  <div class="flex flex-row space-x-5 mb-5">
+    <div class="relative w-80 md:w-96">
+      <div
+        class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      </div>
+      <input
+        type="text"
+        name="name"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5"
+        placeholder="Nombre(s)"
+        value="{{data.user.firstName}}"/>
     </div>
-    <input
-      type="text"
-      name="name"
-      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5"
-      placeholder="Nombre completo"/>
+
+    <div class="relative w-80 md:w-96">
+      <div
+        class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      </div>
+      <input
+        type="text"
+        name="lastName"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5"
+        placeholder="Apellidos"
+        value="{{data.user.lastName}}"/>
+    </div>
+  </div>
+
+  <div class="flex flex-row w-full mb-5 space-x-5">
+    <div class=" w-full">
+      <span class="mr-3 text-sm font-medium text-gray-900" >Hombre</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input
+          *ngIf="data.user.gender" then checked
+          type="checkbox"
+          class="sr-only peer">
+        <div class="w-11 h-6 bg-cyan-500 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-pink-500"></div>
+      </label>
+      <span class="ml-3 text-sm font-medium text-gray-900">Mujer</span>
+    </div>
+
+    <div class="w-full">
+      <input
+        min="1"
+        max="100"
+        value="{{data.user.age}}"
+        type="number"
+        id="age"
+        class="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500"
+        placeholder="Seleccione su edad"
+        required>
+    </div>
+
+  </div>
+
+  <div class="flex flex-row mb-5 space-x-5">
+    <select
+      (change)="onChangeState($event)"
+      id="state" class="block w-full p-2.5 bg-gray-50 rounded-lg border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500">
+      <option selected disabled>Seleccione un estado</option>
+      <option
+        *ngFor="let state of stateList"
+        value="{{state}}">
+        {{state}}
+      </option>
+    </select>
+    <select id="city" class="block w-full p-2.5 bg-gray-50 rounded-lg border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500">
+      <option selected disabled>Seleccione una ciudad</option>
+      <option
+        *ngFor="let city of cities"
+        value="{{city}}">
+        {{city}}
+      </option>
+    </select>
   </div>
 
 </ng-template>
-<ng-template #personal>
-  <p>Datos PERSONALES</p>
-</ng-template>
+
 <ng-template #contact>
   <p>Datos CONTACTO</p>
 </ng-template>
-<ng-template #experience>|
+
+<ng-template #personal>
+  <p>Datos PERSONALES</p>
+</ng-template>
+
+<ng-template #experience>
   <p>Datos EXPERIENCIA</p>
 </ng-template>
 
