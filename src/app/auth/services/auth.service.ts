@@ -16,6 +16,10 @@ export class AuthService {
     return this._http.post(`${this.baseUrl}/api/auth/login`, data)
   }
 
+  public registerUser(data: UserAccount){
+    return this._http.post(`${this.baseUrl}/api/auth/register`, data)
+  }
+
   public storeDataSession(data: UserAccount): void {
     const date = new Date();
     date.setDate(date.getDate() + 1);
