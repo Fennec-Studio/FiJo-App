@@ -8,10 +8,15 @@
         class="bg-white rounded-md shadow-md p-3 w-full transform hover:md:-translate-y-1 hover:md:shadow-lg cursor-pointer">
         <h2 class="text-xl font-bold text-Bright-Cyan">Perfil</h2>
         <div class="flex flex-col items-center space-y-2">
-          <img
+          <!-- <img
             class="w-60"
             src="/assets/img/login_header.svg"
-            alt="Profile picture">
+            alt="Profile picture"> -->
+          <div
+            [ngClass]="{'bg-cyan-500': !AccountData.gender, 'bg-pink-500': AccountData.gender}"
+            class="rounded-full">
+            <p class="text-6xl ml-6 mr-6 mt-8 mb-8 font-semibold text-white">{{getUserLogo()}}</p>
+          </div>
           <h3 class="font-medium text-xl">{{AccountData.firstName + " " + AccountData.lastName}}</h3>
           <div class="w-40 flex flex-row justify-between text-base text-slate-700">
             <p>{{AccountData.gender == 0 ? "Hombre" : "Mujer"}}</p>

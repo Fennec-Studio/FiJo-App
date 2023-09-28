@@ -22,6 +22,16 @@ export class ProfilePageComponent {
     return this._accountService.getAccountData();
   }
 
+  getUserLogo() {
+    let logo = '';
+    const name = this.AccountData.firstName.split(' ');
+    const lastName = this.AccountData.lastName.split(' ');
+    logo += name[0].charAt(0);
+    logo += lastName[0].charAt(0);
+
+    return logo.toUpperCase();
+  }
+
   ngOnInit(): void {
     console.log(this.AccountData);
     if(this._authService.isSessionExpired()) {
