@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { UserAccount } from 'src/app/shared/interfaces/UserAccount';
 
 @Component({
   selector: 'app-register-personal',
@@ -16,18 +18,31 @@ export class RegisterPersonalComponent {
     country: '',
     phone: '',
     role: 1,
+    age: 0,
+    gender: 0,
   }
+
+  dataContact = {}
 
   constructor(
     private _snackBar: MatSnackBar,
     private _router: Router,
-  ) { }
+    private _authService: AuthService
+  ) {
+    this.dataContact = this._router.getCurrentNavigation()?.extras?.state?.['data'] || {};
+    this.personalInfoFormModel = {...this.personalInfoFormModel, ...this.dataContact}
+  }
 
 
   public onRegisterSubmit(): void {
     if(this.validateData(this.personalInfoFormModel)) {
       console.log('registerPersonalFormModel', this.personalInfoFormModel);
-      // this._router.navigate(['/home'])
+      this._authService.registerUser(this.personalInfoFormModel as UserAccount).subscribe((response: any) =>{
+        this.openSnackBar(response.message)
+        if(response.status == 200) {
+          this._router.navigate(['/login'])
+        }
+      })
     }
   }
 
