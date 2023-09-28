@@ -23,6 +23,7 @@ export class ProfilePageComponent {
   }
 
   ngOnInit(): void {
+    console.log(this.AccountData);
     if(this._authService.isSessionExpired()) {
       this._router.navigate(['/login'])
       this._authService.logout()
@@ -32,7 +33,8 @@ export class ProfilePageComponent {
   openDialog(type: number) {
     const dialogRef = this._dialogRef.open(ProfileFormComponent, {
       data: {
-        type
+        type,
+        user: this.AccountData
       },
       width: '600px',
     })
