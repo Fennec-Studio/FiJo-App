@@ -9,7 +9,7 @@ export class AccountService {
   public statesList: string[] = [
     'Aguascalientes', 'Baja California', 'Baja California Sur',
     'Campeche', 'Chiapas', 'Chihuahua',
-    'Ciudad de México', 'Coahuila de Zaragoza', 'Colima',
+    'Ciudad de México', 'Coahuila', 'Colima',
     'Durango', 'Estado de México', 'Guanajuato',
     'Guerrero', 'Hidalgo', 'Jalisco',
     'Michoacán de Ocampo', 'Morelos', 'Nayarit',
