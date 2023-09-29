@@ -1,3 +1,4 @@
+import { JobsModule } from './jobs/jobs.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { LandingModule } from './landing/landing.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { LandingModule } from './landing/landing.module';
     BrowserAnimationsModule,
     AuthModule,
     SharedModule,
-    LandingModule
+    LandingModule,
+    JobsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
