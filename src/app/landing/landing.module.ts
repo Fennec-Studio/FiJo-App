@@ -5,18 +5,19 @@ import { RouterModule } from '@angular/router';
 
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { SharedModule } from '../shared/shared.module';
+import { JobsPageComponent } from '../jobs/pages/jobs-page/jobs-page.component';
 
 @NgModule({
   declarations: [
-    LandingPageComponent
+    LandingPageComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
   ],
   exports: [
-    LandingPageComponent
+    LandingPageComponent,
   ]
 })
 export class LandingModule { }
