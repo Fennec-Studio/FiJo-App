@@ -1,0 +1,23 @@
+<div class="select-none cursor-pointer font-Poppins bg-white container mx-auto shadow-sm m-3 border-gray-200 border flex flex-col text-center md:flex-row justify-center">
+  <div
+    [ngClass]="{'text-Bright-Cyan': index === 0, 'text-gray-400': index !== 0}"
+    (click)="changeIndex(0)"
+    class="block px-4 py-2 text-xl border-l-2 border-r-2">
+    <i class="fa-solid fa-briefcase mr-3"></i>
+    <span class="font-medium">MIS EMPLEOS</span>
+  </div>
+  <div
+  [ngClass]="{'text-Bright-Cyan': index === 1, 'text-gray-400': index !== 1}"
+    (click)="changeIndex(1)"
+    class="block px-4 py-2 text-xl border-r-2">
+    <i class="fa-solid fa-users mr-3"></i>
+    <span class="font-medium">POSTULANTES</span>
+  </div>
+  <div
+    [ngClass]="{'text-Bright-Cyan': index === 2, 'text-gray-400': index !== 2}"
+    (click)="changeIndex(2)"
+    class="block px-4 py-2 text-xl border-r-2">
+    <i class="fa-solid fa-gear mr-3"></i>
+    <span class="font-medium">CONFIGURACIÓN</span>
+  </div>
+</div>
