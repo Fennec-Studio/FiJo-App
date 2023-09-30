@@ -11,17 +11,19 @@
   <div class="w-full h-full flex flex-col justify-center items-center bg-slate-100 login-bg-pattern">
     <!-- IMG HEADER -->
     <img
-      class="w-1/2 md:h-1/5"
+      class="w-1/2 md:h-1/5 mb-16"
       src="/assets/img/login_header.svg"
       alt="Login">
     <!-- HEADER TEXT -->
-    <h2
+    <app-login-form></app-login-form>
+
+    <!-- <h2
       class="mt-16 text-slate-800 font-Poppins font-medium text-3xl">
       Inicia sesión
-    </h2>
+    </h2> -->
     <!-- LOGIN FORM -->
 
-    <form (ngSubmit)="onLoginSubmit()">
+    <!-- <form (ngSubmit)="onLoginSubmit()">
       <div
         class="mt-10"
         id="loginForm">
@@ -72,7 +74,6 @@
           </button>
         </div>
       </div>
-      <!-- CONTROL BUTTONS -->
       <div class="w-80 md:w-96 text-right mt-3">
         <a
           class="text-sm font-medium text-Intense-Turquoise font-Poppins hover:text-Serene-Blue"
@@ -87,8 +88,9 @@
           Continuar
         </button>
       </div>
-    </form>
-    <div class="mt-5 flex">
+    </form> -->
+
+    <!-- <div class="mt-5 flex">
       <p class="text-sm text-slate-800 font-Poppins mr-2">
         ¿No tienes cuenta?
       </p>
@@ -97,6 +99,6 @@
         class="text-sm font-medium text-Intense-Turquoise font-Poppins hover:text-Serene-Blue" href="#">
         Regístrate
       </a>
-    </div>
+    </div> -->
   </div>
 </div>

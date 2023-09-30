@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { LandingModule } from './landing/landing.module';
-import { CommonModule } from '@angular/common';
+import { AccountsModule } from './accounts/accounts.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { CommonModule } from '@angular/common';
     SharedModule,
     LandingModule,
     JobsModule,
-    CommonModule
+    AccountsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
