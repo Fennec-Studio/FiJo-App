@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { JobsPageComponent } from './pages/jobs-page/jobs-page.component';
+import { JobsPageManagementComponent } from './pages/jobs-page-management/jobs-page-management.component';
 import { SharedModule } from '../shared/shared.module';
 import { SubmenuComponent } from './components/submenu/submenu.component';
 
 @NgModule({
   declarations: [
-    JobsPageComponent,
+    JobsPageManagementComponent,
     SubmenuComponent
   ],
   imports: [
@@ -14,7 +14,7 @@ import { SubmenuComponent } from './components/submenu/submenu.component';
     SharedModule,
   ],
   exports: [
-    JobsPageComponent
+    JobsPageManagementComponent
   ]
 })
 export class JobsModule { }
