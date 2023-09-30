@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { LandingModule } from './landing/landing.module';
 import { AccountsModule } from './accounts/accounts.module';
+import { JobsModule } from './jobs/jobs.module';
 
 @NgModule({
   declarations: [
@@ -17,10 +18,13 @@ import { AccountsModule } from './accounts/accounts.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AuthModule,
+
     SharedModule,
+
+    AuthModule,
     LandingModule,
-    AccountsModule
+    AccountsModule,
+    JobsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

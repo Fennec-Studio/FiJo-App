@@ -6,6 +6,7 @@ import { RegisterPageComponent } from './auth/pages/register-page/register-page.
 import { LandingPageComponent } from './landing/pages/landing-page/landing-page.component';
 import { RegisterPersonalComponent } from './auth/pages/register-personal/register-personal.component';
 import { ProfilePageComponent } from './accounts/pages/profile-page/profile-page.component';
+import { JobsPageComponent } from './jobs/pages/jobs-page/jobs-page.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterPageComponent },
   { path: 'register/personal', component: RegisterPersonalComponent },
   { path: 'account/profile', component: ProfilePageComponent },
+  { path: 'jobs/management', component: JobsPageComponent}
 ];
 
 @NgModule({
