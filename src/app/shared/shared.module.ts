@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { DateFixPipe } from './pipes/date-fix.pipe';
 
 @NgModule({
   declarations: [
-    NavBarComponent,
+    NavigationBarComponent,
     DateFixPipe,
   ],
   imports: [
@@ -15,7 +14,7 @@ import { DateFixPipe } from './pipes/date-fix.pipe';
     RouterModule,
   ],
   exports: [
-    NavBarComponent,
+    NavigationBarComponent,
     DateFixPipe,
   ],
 })

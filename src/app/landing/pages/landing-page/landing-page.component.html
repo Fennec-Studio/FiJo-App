@@ -1,6 +1,59 @@
 <div class="w-full h-full relative bg-[#F1F5F9]">
   <div class="z-50 fixed top-0 left-0 w-full flex">
-    <shared-nav-bar class="w-full"></shared-nav-bar>
+    <div class="px-5 py-[10px] flex flex-row justify-between items-center h-[100px] w-full transition-all duration-300"
+  [ngClass]="{'bg-white drop-shadow-md': scroll == true}">
+  <div class="flex flex-row space-x-5 items-center h-[100px]">
+    <img src="https://swebtoon-phinf.pstatic.net/20170906_183/1504692085933eq4Rf_JPEG/thumbnail.jpg" class="w-16 hidden desktop:block"
+      alt="">
+    <a href="/" class="flex relative items-center h-full group transition-all duration-300">
+      <i class="fa-solid fa-star text-Serene-Blue group-hover:text-Intense-Turquoise transition-all duration-300"></i>
+      <span
+        class="ml-[5px] text-xl text-Serene-Blue group-hover:text-Intense-Turquoise transition-all duration-300">Inicio</span>
+      <div
+        class="absolute bottom-7 w-full h-[2px] opacity-0 group-hover:opacity-100 bg-Intense-Turquoise transition-all duration-300">
+      </div>
+    </a>
+    <ng-container *ngIf="sesionActive == true;">
+      <a href="jobs" class="flex relative items-center h-full group transition-all duration-300">
+        <i class="fa-solid fa-star text-Serene-Blue group-hover:text-Intense-Turquoise transition-all duration-300"></i>
+        <span
+          class="ml-[5px] text-xl text-Serene-Blue group-hover:text-Intense-Turquoise transition-all duration-300">Trabajos</span>
+        <div
+          class="absolute bottom-7 w-full h-[2px] opacity-0 group-hover:opacity-100 bg-Intense-Turquoise transition-all duration-300">
+        </div>
+      </a>
+    </ng-container>
+  </div>
+  <div class="space-x-[10px]">
+    <ng-container *ngIf="sesionActive == false; else profile">
+      <a
+        routerLink="/register"
+        class="px-5 py-[10px] rounded-3xl hover:bg-[#D4E0ED] text-lg transition-all duration-300">
+        Crear cuenta
+      </a>
+      <a
+        routerLink="/login"
+        class="px-5 py-[10px] border border-Midnight-Blue rounded-3xl hover:bg-[#D4E0ED] text-lg transition-all duration-300">
+        Iniciar sesión
+      </a>
+    </ng-container>
+    <ng-template #profile>
+      <a href="#">
+        <div class="h-16 w-16 flex justify-center items-center rounded-full bg-pink-400 text-white text-3xl" *ngIf="gender == 0; else men">
+          <span>{{name[0]}}</span>
+          <span>{{lastName[0]}}</span>
+        </div>
+      </a>
+      <ng-template #men>
+        <div class="h-16 w-16 flex justify-center items-center rounded-full bg-blue-400 text-white text-3xl">
+          <span>{{name[0]}}</span>
+          <span>{{lastName[0]}}</span>
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
+
+</div>
   </div>
   <div class="translate-y-[100px]">
 

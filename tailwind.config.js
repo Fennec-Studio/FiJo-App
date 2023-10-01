@@ -15,7 +15,10 @@ module.exports = {
         'Bright-Cyan': '#0F969C',
         'Serene-Blue': '#6DA5C0',
         'Navy-Blue': '#294D61'
-      }
+      },
+      screens: {
+        'desktop': '1024px'
+      },
     },
   },
   plugins: [],

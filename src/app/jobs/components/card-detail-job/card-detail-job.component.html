@@ -1,0 +1,26 @@
+<div class="bg-white h-full w-full p-5 rounded-lg border border-gray-300 overflow-y-auto">
+  <div class="w-[30%] py-5">
+    <img src="" alt="" [src]="jobList[jobSelected].jobImg">
+  </div>
+  <div class="text-xl space-y-2.5">
+    <p class="font-medium">{{jobList[jobSelected].jobTitle}}</p>
+    <p class="font-medium"><span>{{jobList[jobSelected].jobPayment | currency}}</span> ({{jobList[jobSelected].jobFrecuencyPayment}})</p>
+    <div class="flex flex-row justify-start flex-wrap space-x-2 text-base font-normal">
+      <p>{{jobList[jobSelected].jobLocation}}</p> <p>•</p> <p>{{jobList[jobSelected].jobEnterprise}}</p>
+    </div>
+    <div class="flex flex-row justify-start flex-wrap space-x-2 text-base font-normal">
+      <p>{{jobList[jobSelected].jobContractType}}</p> <p>•</p> <p>{{jobList[jobSelected].jobTime}}</p> <p>•</p> <p>{{jobList[jobSelected].jobType}}</p>
+    </div>
+    <div class="flex flex-row justify-start my-2">
+      <button class="px-[15px] py-[5px] rounded-3xl bg-Intense-Turquoise hover:bg-[#0A585C] text-base text-white transition-all duration-300">
+        Postularme
+      </button>
+    </div>
+    <div class="pt-3">
+      <hr>
+    </div>
+    <div class="text-base">
+      {{jobList[jobSelected].jobDescription}}
+    </div>
+  </div>
+</div>
