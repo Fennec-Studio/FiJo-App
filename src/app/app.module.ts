@@ -1,4 +1,3 @@
-import { JobsModule } from './jobs/jobs.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
