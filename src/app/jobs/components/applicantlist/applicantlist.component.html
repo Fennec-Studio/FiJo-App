@@ -1,1 +1,75 @@
-<p>applicantlist works!</p>
+<div class="select-none justify-center font-Poppins bg-white container mx-auto shadow-sm m-3 p-3 border-gray-200 border">
+  <div class="w-full relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500">
+      <thead class="text-xs text-white uppercase bg-Bright-Cyan">
+        <tr>
+            <th scope="col" class="px-6 py-3">
+                Empleo
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Nombre(s)
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Apellidos
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Fecha postulación
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Acciones
+            </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-white border-b">
+          <th scope="row" class="px-6 py-2 font-medium text-gray-900 whitespace-nowrap">
+            Desarrollador Frontend
+          </th>
+          <td class="px-4 py-4">
+              Joseph Ian
+          </td>
+          <td class="px-4 py-4">
+              Gonzalez Cabrales
+          </td>
+          <td class="px-4 py-4">
+              01/10/2023
+          </td>
+          <td class="flex space-x-2 px-4 py-4">
+            <button class="bg-green-500 hover:bg-green-400 text-white rounded-md px-2 py-1 text-sm font-semibold">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+            <button class="bg-red-500 hover:bg-red-400 text-white rounded-md px-2 py-1 text-sm font-semibold">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <nav aria-label="Pagination" class="flex justify-end mt-5">
+    <ul class="inline-flex right-0 -space-x-px text-sm">
+      <li>
+        <a href="#" class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700">Previous</a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">1</a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">2</a>
+      </li>
+      <li>
+        <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700">3</a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">4</a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">5</a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
