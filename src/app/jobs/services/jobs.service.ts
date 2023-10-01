@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+
 import { dataJob } from "../interface/jobs.interface";
 import { BehaviorSubject } from "rxjs";
 
@@ -8,9 +9,17 @@ import { BehaviorSubject } from "rxjs";
 })
 
 export class JobsService {
-
+  private baseUrl = 'http://api.fijo.site';
   public idJob = new BehaviorSubject<number>(0);
+  
+  constructor(
+    private _http: HttpClient
+  ) { }
 
+  public getJobs(){
+    return this._http.get(`${this.baseUrl}/api/jobs/getall`)
+  }
+  
   public inputJobList: dataJob[] = [
     {
       jobID: 0,
@@ -43,6 +52,4 @@ export class JobsService {
       // jobTags: ["HTML", "CSS", "JavaScript", "
     },
   ]
-
-  constructor( ) { }
 }

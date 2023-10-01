@@ -1,4 +1,3 @@
-import { JobsModule } from './jobs/jobs.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { LandingModule } from './landing/landing.module';
 import { AccountsModule } from './accounts/accounts.module';
+import { JobsModule } from './jobs/jobs.module';
 
 @NgModule({
   declarations: [
@@ -18,11 +18,13 @@ import { AccountsModule } from './accounts/accounts.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AuthModule,
+
     SharedModule,
+
+    AuthModule,
     LandingModule,
+    AccountsModule,
     JobsModule,
-    AccountsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
