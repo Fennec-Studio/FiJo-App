@@ -14,7 +14,7 @@ import { DateFixPipe } from './pipes/date-fix.pipe';
     RouterModule,
   ],
   exports: [
-    NavigationBarComponent
+    NavigationBarComponent,
     DateFixPipe,
   ],
 })
