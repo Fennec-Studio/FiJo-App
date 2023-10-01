@@ -1,6 +1,7 @@
-<div class="grid grid-cols-4 gap-4 justify-center cursor-pointer font-Poppins bg-white container mx-auto shadow-sm m-3 p-3 border-gray-200 border">
-  <app-job-card class="bg-red-400"></app-job-card>
-  <app-job-card class="bg-blue-400"></app-job-card>
-  <app-job-card class="bg-green-400"></app-job-card>
-  <app-job-card class="bg-yellow-400"></app-job-card>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 select-none justify-center font-Poppins bg-white container mx-auto shadow-sm m-3 p-3 border-gray-200 border">
+  <app-job-card
+    *ngFor="let job of JobLists"
+    [jobData]="job"
+    class="border rounded-md shadow-sm p-2">
+  </app-job-card>
 </div>
