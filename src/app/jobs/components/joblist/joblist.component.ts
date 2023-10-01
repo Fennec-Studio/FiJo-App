@@ -8,7 +8,7 @@ import { JobsInfo } from 'src/app/shared/interfaces/JobsInfo';
 export class JoblistComponent {
   JobLists: JobsInfo[] = [{
       JID: 1,
-      JOBTITLE: "Hola",
+      JOBTITLE: "Desarrollador Frontend",
       JOBDESCRIPTION: "Bsarrollo web.",
       LOCATION: "Ciudad emplo",
       REQUERIMENTS: "Requisit efectiva.",
@@ -24,7 +24,7 @@ export class JoblistComponent {
     },
     {
       JID: 1,
-      JOBTITLE: "Hola",
+      JOBTITLE: "Desarrollador Backend",
       JOBDESCRIPTION: "Bsarrollo web.",
       LOCATION: "Ciudad emplo",
       REQUERIMENTS: "Requisit efectiva.",
@@ -40,7 +40,7 @@ export class JoblistComponent {
     },
     {
       JID: 1,
-      JOBTITLE: "Hola",
+      JOBTITLE: "Analista de datos",
       JOBDESCRIPTION: "Bsarrollo web.",
       LOCATION: "Ciudad emplo",
       REQUERIMENTS: "Requisit efectiva.",
@@ -56,7 +56,7 @@ export class JoblistComponent {
     },
     {
       JID: 1,
-      JOBTITLE: "Hola",
+      JOBTITLE: "Nombre de empleo largo para probar el front",
       JOBDESCRIPTION: "Bsarrollo web.",
       LOCATION: "Ciudad emplo",
       REQUERIMENTS: "Requisit efectiva.",
@@ -72,7 +72,7 @@ export class JoblistComponent {
     },
     {
       JID: 1,
-      JOBTITLE: "Hola",
+      JOBTITLE: "Nombre del empleo largo",
       JOBDESCRIPTION: "Bsarrollo web.",
       LOCATION: "Ciudad emplo",
       REQUERIMENTS: "Requisit efectiva.",
@@ -88,7 +88,7 @@ export class JoblistComponent {
     },
     {
       JID: 1,
-      JOBTITLE: "Hola",
+      JOBTITLE: "Prueba de la longitud del empleo",
       JOBDESCRIPTION: "Bsarrollo web.",
       LOCATION: "Ciudad emplo",
       REQUERIMENTS: "Requisit efectiva.",
