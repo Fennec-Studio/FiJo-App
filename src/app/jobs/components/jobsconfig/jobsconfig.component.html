@@ -1,0 +1,79 @@
+<div class="select-none justify-center font-Poppins bg-white container mx-auto shadow-sm m-3 p-3 border-gray-200 border">
+
+<form class="flex flex-col space-y-5">
+  <div class="w-full flex flex-row space-x-5">
+    <div class="w-full">
+      <label for="bName" class="block mb-2 text-sm font-medium text-gray-900">Nombre empresa</label>
+      <input placeholder="Nombre de la empresa" required autocomplete="off" type="text" id="bName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+    </div>
+
+    <div class="w-full">
+      <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Correo electrónico</label>
+      <input placeholder="Correo de la empresa" required autocomplete="off" type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+    </div>
+  </div>
+
+  <div class="w-full flex flex-row space-x-5">
+    <div class="w-full">
+      <label for="state" class="block mb-2 text-sm font-medium text-gray-900">Seleccione un estado</label>
+      <select
+        (change)="onChangeState($event)"
+        id="state" class="block w-full p-2.5 bg-gray-50 rounded-lg border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500">
+        <option selected disabled>Seleccione un estado</option>
+        <option
+          *ngFor="let state of stateList"
+          value="{{state}}">
+          {{state}}
+        </option>
+      </select>
+    </div>
+    <div class="w-full">
+      <label for="city" class="block mb-2 text-sm font-medium text-gray-900">Seleccione una Ciudad</label>
+      <!-- Deshabilitar select si cities[] está vacío -->
+      <select
+        [disabled]="cities.length === 0"
+        id="city" class="block w-full p-2.5 bg-gray-50 rounded-lg border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500">
+        <option selected disabled>Seleccione una ciudad</option>
+        <option
+          *ngFor="let city of cities"
+          value="{{city}}">
+          {{city}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="w-full flex flex-row space-x-5">
+    <div class="w-full">
+      <label for="address" class="block mb-2 text-sm font-medium text-gray-900">Dirección</label>
+      <input placeholder="Nombre calle #0000, C.P. 000000" required autocomplete="off" type="text" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+    </div>
+  </div>
+
+  <div class="w-full flex flex-row space-x-5">
+    <div class="w-full">
+      <label for="about" class="block mb-2 text-sm font-medium text-gray-900">Acerca de</label>
+      <textarea rows="5" placeholder="Descripción de mi empresa" required autocomplete="off" type="text" id="about" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+    </div>
+  </div>
+
+  <div class="flex flex-col">
+    <div class="w-full flex flex-row space-x-5">
+      <div class="w-full">
+        <label for="website" class="block mb-2 text-sm font-medium text-gray-900">Sitio web</label>
+        <input placeholder="Sitio web empresa" required autocomplete="off" type="text" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+      </div>
+
+      <div class="w-full">
+        <label for="linkedin" class="block mb-2 text-sm font-medium text-gray-900">LinkedIn</label>
+        <input placeholder="Linkedin" required autocomplete="off" type="text" id="linkedin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="text-white bg-Bright-Cyan hover:bg-Intense-Turquoise focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+    Guardar
+  </button>
+</form>
+
+</div>

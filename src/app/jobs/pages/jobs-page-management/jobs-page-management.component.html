@@ -1,0 +1,11 @@
+<shared-navigation-bar></shared-navigation-bar>
+<app-jobs-submenu (idx)="changeIndex($event)"></app-jobs-submenu>
+
+<app-jobs-list
+  [ngClass]="{'hidden': idx !== 0}"></app-jobs-list>
+
+<app-job-applicantlist
+  [ngClass]="{'hidden': idx !== 1}"></app-job-applicantlist>
+
+<app-jobs-config
+  [ngClass]="{'hidden': idx !== 2}"></app-jobs-config>

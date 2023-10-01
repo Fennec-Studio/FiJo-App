@@ -9,11 +9,16 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { RouterModule } from '@angular/router';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { RegisterPersonalComponent } from './pages/register-personal/register-personal.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
     LoginPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    LoginFormComponent,
+    RegisterPersonalComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +28,11 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   exports: [
-    LoginPageComponent
+    LoginPageComponent,
+    LoginFormComponent
+  ],
+  providers: [
+    AuthService
   ]
 })
 export class AuthModule { }

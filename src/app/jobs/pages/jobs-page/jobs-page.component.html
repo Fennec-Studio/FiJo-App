@@ -1,0 +1,45 @@
+<div class="w-full relative bg-[#F1F5F9]">
+  <shared-navigation-bar></shared-navigation-bar>
+  <div class="w-full flex flex-col desktop:flex-row desktop:justify-center">
+    <div class="mx-5 mt-5 desktop:w-1/3 relative">
+      <input type="text" placeholder="¿Qué empleo estás buscando?"
+        class="w-full h-12 rounded-full px-4 outline-none drop-shadow-sm hover:drop-shadow-lg focus-within:drop-shadow-lg transition-all duration-200 ease-in-out">
+      <span class="w-10 h-10 absolute right-1 top-1 flex justify-center items-center bg-Intense-Turquoise hover:bg-[#0A585C] p-2 rounded-full transition-all duration-200 ease-in-out hover:cursor-pointer">
+        <i class="fa-solid fa-search text-xl text-white"></i>
+      </span>
+    </div>
+    <div class="mx-5 mt-5 relative w-1/3 hidden lg:block">
+      <input type="text" placeholder="¿Dónde?"
+        class="w-full h-12 rounded-full px-4 outline-none drop-shadow-sm hover:drop-shadow-lg focus-within:drop-shadow-lg transition-all duration-200 ease-in-out">
+      <span class="w-10 h-10 absolute right-1 top-1 flex justify-center items-center bg-Intense-Turquoise hover:bg-[#0A585C] p-2 rounded-full transition-all duration-200 ease-in-out hover:cursor-pointer">
+        <i class="fa-solid fa-search text-xl text-white"></i>
+      </span>
+    </div>
+  </div>
+  <div class="mx-5 my-5 relative flex flex-row flex-wrap justify-start">
+    <filter-dropdown labelMenu="Ordenar por" [filterOptions]="['Relevancia', 'Fecha', 'Salario']"></filter-dropdown>
+    <filter-dropdown labelMenu="Fecha" [filterOptions]="['Urgente', 'Desde ayer', 'Últimos 3 días', 'Última semana', 'Úlitmos 15 días', 'Último mes']"></filter-dropdown>
+    <filter-dropdown labelMenu="Categoría" [filterOptions]="['Informática / Telecomunicaciones', 'Hostelería / Turismo', 'Adminsitración / Oficina', 'Diseño / Artes gráficas', 'Otros']"></filter-dropdown>
+    <filter-dropdown labelMenu="Modalidad de trabajo" [filterOptions]="['Presencial', 'Híbrido', 'Remoto']"></filter-dropdown>
+    <filter-dropdown labelMenu="Experiencia" [filterOptions]="['Sin experiencia', '1 año', '2 años', '3-4 años', '5-10 años', 'Más de 10 años']"></filter-dropdown>
+    <filter-dropdown labelMenu="Salario" [filterOptions]="['Más de $ 5,000', 'Más de $ 10,000', 'Más de $ 15,000', 'Más de $ 20,000', 'Más de $ 30,000', 'Más de $ 40,000' , 'Más de $ 50,000', 'Más de $ 65,000', 'Más de $ 80,000']"></filter-dropdown>
+    <filter-dropdown labelMenu="Jornada" [filterOptions]="['Tiempo completo', 'Media tiempo', 'Por horas']"></filter-dropdown>
+    <filter-dropdown labelMenu="Tipo de contrato" [filterOptions]="['Por tiempo indeterminado', 'Por tiempo determinado', 'Otro tipo de contrato']"></filter-dropdown>
+  </div>
+  <div class="flex flex-row w-full px-5 my-5 desktop:sticky desktop:h-full">
+    <div class="relative flex flex-col justify-start pt-5 desktop:w-[40%] overflow-y-auto">
+      <div class="w-full h-20 bg-white flex flex-row justify-center items-center">
+        <span class="font-semibold">350</span>
+        <span class="mx-1">Trabajos de</span>
+        <span class="font-semibold">Desarrollador web</span>
+      </div>
+      <job-expansion [jobList]="inputJobList" [sizeOfDisplay]="sizeDisplay"></job-expansion>
+    </div>
+    <div class="hidden h-screen p-5 desktop:block desktop:w-[60%] desktop:sticky">
+      <card-detail-job (outputJobData)="recieveDataCard(idJob)" [jobSelected]="idJob" [jobList]="inputJobList"></card-detail-job>
+    </div>
+  </div>
+
+
+
+</div>
