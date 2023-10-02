@@ -10,6 +10,7 @@ export interface dataJob {
   jobTime: String;
   jobType: String;
   jobDescription: String;
+  jobCreatedAt: String;
   jobEnterpriseRate: number;
   // jobTags: String[];
 }
