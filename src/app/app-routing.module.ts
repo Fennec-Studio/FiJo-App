@@ -7,6 +7,9 @@ import { LandingPageComponent } from './landing/pages/landing-page/landing-page.
 import { JobsPageComponent } from './jobs/pages/jobs-page/jobs-page.component';
 import { RegisterPersonalComponent } from './auth/pages/register-personal/register-personal.component';
 import { ProfilePageComponent } from './accounts/pages/profile-page/profile-page.component';
+import { LoginEnterprisePageComponent } from './auth/pages/loginEnterprise-page/login-enterprise-page/login-enterprise-page.component';
+import { RegisterEnterprisePageComponent } from './auth/pages/register-enterprise-page/register-enterprise-page.component';
+import { RegisterEnterpriseDataPageComponent } from './auth/pages/register-enterprise-data-page/register-enterprise-data-page.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -15,6 +18,9 @@ const routes: Routes = [
   { path: 'jobs', component: JobsPageComponent},
   { path: 'register/personal', component: RegisterPersonalComponent },
   { path: 'account/profile', component: ProfilePageComponent },
+  { path: 'login-enterprise', component: LoginEnterprisePageComponent},
+  { path: 'register-enterprise', component: RegisterEnterprisePageComponent},
+  { path: 'register-enterprise/data', component: RegisterEnterpriseDataPageComponent},
 ];
 
 @NgModule({
