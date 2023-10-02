@@ -23,6 +23,7 @@ export class JobsService {
       jobContractType: "Contrato por tiempo indeterminado",
       jobTime: "Tiempo completo",
       jobType: "Presencial",
+      jobCreatedAt: "1 Octubre 2023",
       jobDescription: "Empresa 100% Mexicana. Lider en Desarrollo, solicita: Desarrollador Front End Responsabilidades: Traducir diseños a lenguaje de programación. Dominar los lenguajes de programación HTML, CSS y JavaScript para poder aplicar el diseño a la web o app que se proponga.",
       jobEnterpriseRate: 5,
       // jobTags: ["HTML", "CSS", "JavaScript", "Frontend", "Desarrollador", "FEMSA", "Grupo FEMSA", "Tiempo completo", "Presencial", "Contrato por tiempo indeterminado", "Ciudad de México", "CDMX", "Lago Zurich"]
@@ -38,6 +39,7 @@ export class JobsService {
       jobContractType: "Contrato por tiempo indeterminado",
       jobTime: "Medio tiempo",
       jobType: "Remoto",
+      jobCreatedAt: "1 Septiembre 2023",
       jobDescription: "Empresa 100% Mexicana. Lider en Desarrollo, solicita: Desarrollador Back End Responsabilidades: Hacer cosas de Backend.",
       jobEnterpriseRate: 4.5,
       // jobTags: ["HTML", "CSS", "JavaScript", "
