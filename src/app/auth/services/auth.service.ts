@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserAccount } from '../../shared/interfaces/UserAccount';
 import { HttpClient } from '@angular/common/http';
+import { EnterpriseAccount } from 'src/app/shared/interfaces/EnterpriseAccount';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,23 @@ export class AuthService {
     return this._http.post(`${this.baseUrl}/api/auth/register`, data)
   }
 
+  public validateEnterpriseLogin(data: LoginModel){
+    return this._http.post(`${this.baseUrl}/api/auth/companies/login`, data)
+  }
+
+  public registerEnterprise(data: EnterpriseAccount){
+    return this._http.post(`${this.baseUrl}/api/auth/companies/insert`, data)
+  }
+
   public storeDataSession(data: UserAccount): void {
+    const date = new Date();
+    date.setDate(date.getDate() + 1);
+    localStorage.setItem('user', JSON.stringify(data));
+    localStorage.setItem('logged', 'true');
+    localStorage.setItem('session_expire', date.toISOString().slice(0, 19).replace('T', ' '));
+  }
+
+  public storeDataSessionEnterprise(data: EnterpriseAccount): void {
     const date = new Date();
     date.setDate(date.getDate() + 1);
     localStorage.setItem('user', JSON.stringify(data));
