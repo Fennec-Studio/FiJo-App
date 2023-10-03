@@ -11,12 +11,12 @@ import { JobsPageManagementComponent } from './jobs/pages/jobs-page-management/j
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
-  { path: 'login', component: LoginPageComponent },
-  { path: 'register', component: RegisterPageComponent },
-  { path: 'jobs/management', component: JobsPageManagementComponent},
-  { path: 'jobs', component: JobsPageComponent},
-  { path: 'register/personal', component: RegisterPersonalComponent },
-  { path: 'account/profile', component: ProfilePageComponent }
+  { path: '/login', component: LoginPageComponent },
+  { path: '/register', component: RegisterPageComponent },
+  { path: '/jobs/management', component: JobsPageManagementComponent},
+  { path: '/jobs', component: JobsPageComponent},
+  { path: '/register/personal', component: RegisterPersonalComponent },
+  { path: '/account/profile', component: ProfilePageComponent }
 ];
 
 @NgModule({
