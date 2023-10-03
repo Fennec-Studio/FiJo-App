@@ -34,12 +34,13 @@ import { JobExpansionComponent } from './components/job-expansion/job-expansion.
     RouterModule,
     SharedModule,
     HttpClientModule,
-    
+
     JobExpansionComponent,
     FilterDropdownComponent,
   ],
   exports:[
     JobsPageComponent,
+    JobsPageManagementComponent,
   ]
 })
 export class JobsModule{ }

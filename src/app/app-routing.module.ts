@@ -13,10 +13,10 @@ const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
+  { path: 'jobs/management', component: JobsPageManagementComponent},
   { path: 'jobs', component: JobsPageComponent},
   { path: 'register/personal', component: RegisterPersonalComponent },
-  { path: 'account/profile', component: ProfilePageComponent },
-  { path: 'jobs/management', component: JobsPageManagementComponent}
+  { path: 'account/profile', component: ProfilePageComponent }
 ];
 
 @NgModule({
