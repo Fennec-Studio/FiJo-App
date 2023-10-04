@@ -2,13 +2,13 @@
   <!-- LEFT SIDE -->
   <div class="bg-Bright-Cyan hidden md:flex md:w-1/2 flex-col items-center justify-center">
     <h2 class="w-10/12 text-4xl shadow-sm font-Poppins font-medium text-white mb-10">
-      Unos datos más y listo
+      Unos cuantos datos más y listo
     </h2>
     <img src="/assets/img/register_aside.svg" class="w-96">
   </div>
 
   <!-- RIGHT SIDE -->
-  <div class="w-full h-full flex flex-col justify-center items-center bg-slate-100 login-bg-pattern">
+  <div class="w-full h-screen flex flex-col justify-start items-center bg-slate-100 login-bg-pattern overflow-auto py-10">
     <!-- IMG HEADER -->
     <img
       class="w-1/2 md:h-1/5"
@@ -17,7 +17,7 @@
     <!-- HEADER TEXT -->
     <h2
       class="mt-16 text-slate-800 font-Poppins font-medium text-3xl">
-      Datos personales
+      Datos de la empresa
     </h2>
     <!-- LOGIN FORM -->
 
@@ -30,7 +30,7 @@
           <input
             type="text"
             name="address"
-            [(ngModel)] = "personalInfoFormModel.address"
+            [(ngModel)] = "enterpriseInfoFormModel.address"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
             placeholder="Dirección">
         </div>
@@ -40,7 +40,7 @@
             <input
               type="text"
               name="city"
-              [(ngModel)] = "personalInfoFormModel.city"
+              [(ngModel)] = "enterpriseInfoFormModel.city"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
               placeholder="Ciudad">
           </div>
@@ -49,7 +49,7 @@
             <input
               type="text"
               name="state"
-              [(ngModel)] = "personalInfoFormModel.state"
+              [(ngModel)] = "enterpriseInfoFormModel.state"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
               placeholder="Estado">
           </div>
@@ -60,7 +60,7 @@
             <input
               type="text"
               name="zipCode"
-              [(ngModel)] = "personalInfoFormModel.zipCode"
+              [(ngModel)] = "enterpriseInfoFormModel.zipCode"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
               placeholder="Código postal">
           </div>
@@ -69,33 +69,42 @@
             <input
               type="text"
               name="country"
-              [(ngModel)] = "personalInfoFormModel.country"
+              [(ngModel)] = "enterpriseInfoFormModel.country"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
               placeholder="País">
           </div>
         </div>
 
+        <div class="relative w-80 md:w-96 mt-5">
+          <input
+            type="text"
+            name="Phone"
+            [(ngModel)] = "enterpriseInfoFormModel.phone"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="(999) 111 2233">
+        </div>
+
         <hr class="h-[1px] my-4 border-0 bg-gray-300">
 
-        <div class="flex flex-row justify-between mt-5">
-          <div class="w-[155px] md:w-[185px]">
-            <input
-              min="1"
-              max="100"
-              type="number"
-              name="Age"
-              [(ngModel)] = "personalInfoFormModel.age"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Ingrese su edad">
-          </div>
-          <div class="w-[155px] md:w-[185px]">
-            <input
-              type="text"
-              name="Phone"
-              [(ngModel)] = "personalInfoFormModel.phone"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-              placeholder="(999) 111 2233">
-          </div>
+        <div class="relative w-80 md:w-96">
+          <input
+            type="text"
+            name="logo"
+            [(ngModel)] = "enterpriseInfoFormModel.logo"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="Ingrese el link de la imagen">
+        </div>
+
+        <div class="relative w-80 md:w-96 mt-5">
+          <textarea name="description" [(ngModel)] = "enterpriseInfoFormModel.description" rows="5"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="Descripción de la empresa"></textarea>
+        </div>
+
+        <div class="relative w-80 md:w-96 mt-5">
+          <textarea name="socialMedia" [(ngModel)] = "enterpriseInfoFormModel.socialMedia" rows="5"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="Redes sociales o sitios web de la empresa"></textarea>
         </div>
 
       </div>
