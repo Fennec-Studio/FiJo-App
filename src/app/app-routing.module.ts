@@ -10,6 +10,7 @@ import { ProfilePageComponent } from './accounts/pages/profile-page/profile-page
 import { LoginEnterprisePageComponent } from './auth/pages/loginEnterprise-page/login-enterprise-page/login-enterprise-page.component';
 import { RegisterEnterprisePageComponent } from './auth/pages/register-enterprise-page/register-enterprise-page.component';
 import { RegisterEnterpriseDataPageComponent } from './auth/pages/register-enterprise-data-page/register-enterprise-data-page.component';
+import { JobsPageManagementComponent } from './jobs/pages/jobs-page-management/jobs-page-management.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'login-enterprise', component: LoginEnterprisePageComponent},
   { path: 'register-enterprise', component: RegisterEnterprisePageComponent},
   { path: 'register-enterprise/data', component: RegisterEnterpriseDataPageComponent},
+  { path: 'jobs/management', component: JobsPageManagementComponent}
 ];
 
 @NgModule({

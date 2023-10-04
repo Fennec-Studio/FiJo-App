@@ -1,0 +1,25 @@
+<div class="relative">
+  <h2 class="text-lg font-semibold text-slate-900 line-clamp-1" title="{{jobData.JOBTITLE}}">{{jobData.JOBTITLE}}</h2>
+  <div class="flex flex-row items-center space-x-2">
+    <i class="fa-solid fa-circle-info text-slate-400"></i>
+    <p class="w-full text-sm text-slate-500 line-clamp-1">{{jobData.JOBDESCRIPTION}}</p>
+  </div>
+  <div class="flex flex-row items-center space-x-2">
+    <i class="fa-solid fa-location-dot text-slate-400 ml-[2px] mr-[2px]"></i>
+    <p class="w-full text-sm text-slate-500 line-clamp-1">{{jobData.LOCATION}}</p>
+  </div>
+  <div class="flex flex-row items-center space-x-2">
+    <i class="fa-solid fa-dollar-sign text-slate-400 ml-1"></i>
+    <p class="w-full text-sm text-slate-500 line-clamp-1">{{jobData.SALARY}}</p>
+  </div>
+  <div class="flex flex-row items-center space-x-2">
+    <i class="fa-solid fa-calendar-days text-slate-400"></i>
+    <p class="w-full text-sm text-slate-500 line-clamp-1">{{jobData.CREATION_DATE}}</p>
+  </div>
+
+  <div class="absolute bottom-0 right-0 cursor-pointer">
+    <button class="bg-orange-400 hover:bg-orange-300 text-white rounded-md px-2 py-1 text-sm font-semibold">
+      <i class="fa-solid fa-pen-to-square"></i>
+    </button>
+  </div>
+</div>
