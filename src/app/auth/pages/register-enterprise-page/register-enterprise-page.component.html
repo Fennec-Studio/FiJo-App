@@ -2,7 +2,7 @@
   <!-- LEFT SIDE -->
   <div class="bg-Bright-Cyan hidden md:flex md:w-1/2 flex-col items-center justify-center">
     <h2 class="w-10/12 text-4xl shadow-sm font-Poppins font-medium text-white mb-10">
-      Comienza a escribir tu futuro
+      Registra tu empresa y unete a nosotros
     </h2>
     <img src="/assets/img/register_aside.svg" class="w-96">
   </div>
@@ -17,7 +17,7 @@
     <!-- HEADER TEXT -->
     <h2
       class="mt-16 text-slate-800 font-Poppins font-medium text-3xl">
-      Crear una cuenta
+      Crear una cuenta de empresa
     </h2>
     <!-- LOGIN FORM -->
 
@@ -27,22 +27,13 @@
         id="registerForms">
         <div class="flex flex-row justify-between">
 
-          <div class="w-[155px] md:w-[185px]">
+          <div class="w-80 md:w-96">
             <input
               type="text"
               name="email"
-              [(ngModel)] = "registerFormModel.firstName"
+              [(ngModel)] = "registerFormModel.name"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Nombre(s)">
-          </div>
-
-          <div class="w-[155px] md:w-[185px]">
-            <input
-              type="text"
-              name="email"
-              [(ngModel)] = "registerFormModel.lastName"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Apellidos">
+              placeholder="Nombre de la empresa">
           </div>
         </div>
 
@@ -118,22 +109,22 @@
     </form>
     <div class="mt-5 flex">
       <p class="text-sm text-slate-800 font-Poppins mr-2">
-        ¿Ya tienes cuenta?
+        ¿Ya tienes cuenta de empresa?
       </p>
       <a
-        [routerLink]="['/login']" routerLinkActive="router-link-active"
+        [routerLink]="['/login-enterprise']" routerLinkActive="router-link-active"
         class="text-sm font-medium text-Intense-Turquoise font-Poppins hover:text-Serene-Blue">
         Inicia sesión
       </a>
     </div>
     <div class="mt-5 flex">
       <p class="text-sm text-slate-800 font-Poppins mr-2">
-        ¿Eres una empresa?
+        ¿Eres candidato?
       </p>
       <a
-        [routerLink]="['/register-enterprise']" routerLinkActive="router-link-active"
+        [routerLink]="['/register']" routerLinkActive="router-link-active"
         class="text-sm font-medium text-Intense-Turquoise font-Poppins hover:text-Serene-Blue">
-        Crear cuenta de empresa
+        Crear cuenta de candidato
       </a>
     </div>
   </div>

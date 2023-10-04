@@ -12,13 +12,19 @@ import { RouterModule } from '@angular/router';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { RegisterPersonalComponent } from './pages/register-personal/register-personal.component';
 import { AuthService } from './services/auth.service';
+import { LoginEnterprisePageComponent } from './pages/loginEnterprise-page/login-enterprise-page/login-enterprise-page.component';
+import { RegisterEnterprisePageComponent } from './pages/register-enterprise-page/register-enterprise-page.component';
+import { RegisterEnterpriseDataPageComponent } from './pages/register-enterprise-data-page/register-enterprise-data-page.component';
 
 @NgModule({
   declarations: [
     LoginPageComponent,
     RegisterPageComponent,
     LoginFormComponent,
-    RegisterPersonalComponent
+    RegisterPersonalComponent,
+    LoginEnterprisePageComponent,
+    RegisterEnterprisePageComponent,
+    RegisterEnterpriseDataPageComponent
   ],
   imports: [
     CommonModule,
