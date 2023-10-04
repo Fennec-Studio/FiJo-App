@@ -16,17 +16,17 @@ const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
+  { path: 'jobs/management', component: JobsPageManagementComponent},
   { path: 'jobs', component: JobsPageComponent},
   { path: 'register/personal', component: RegisterPersonalComponent },
   { path: 'account/profile', component: ProfilePageComponent },
   { path: 'login-enterprise', component: LoginEnterprisePageComponent},
   { path: 'register-enterprise', component: RegisterEnterprisePageComponent},
   { path: 'register-enterprise/data', component: RegisterEnterpriseDataPageComponent},
-  { path: 'jobs/management', component: JobsPageManagementComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
