@@ -14,19 +14,19 @@ export class AuthService {
   ) { }
 
   public validateUserLogin(data: LoginModel){
-    return this._http.post(`${this.baseUrl}/api/auth/login`, data)
+    return this._http.post(`${this.baseUrl}/auth/login`, data)
   }
 
   public registerUser(data: UserAccount){
-    return this._http.post(`${this.baseUrl}/api/auth/register`, data)
+    return this._http.post(`${this.baseUrl}/auth/register`, data)
   }
 
   public validateEnterpriseLogin(data: LoginModel){
-    return this._http.post(`${this.baseUrl}/api/auth/companies/login`, data)
+    return this._http.post(`${this.baseUrl}/auth/companies/login`, data)
   }
 
   public registerEnterprise(data: EnterpriseAccount){
-    return this._http.post(`${this.baseUrl}/api/auth/companies/insert`, data)
+    return this._http.post(`${this.baseUrl}/auth/companies/insert`, data)
   }
 
   public storeDataSession(data: UserAccount): void {
@@ -35,6 +35,7 @@ export class AuthService {
     localStorage.setItem('user', JSON.stringify(data));
     localStorage.setItem('logged', 'true');
     localStorage.setItem('session_expire', date.toISOString().slice(0, 19).replace('T', ' '));
+    localStorage.setItem('user_type', '1');
   }
 
   public storeDataSessionEnterprise(data: EnterpriseAccount): void {
@@ -43,6 +44,7 @@ export class AuthService {
     localStorage.setItem('user', JSON.stringify(data));
     localStorage.setItem('logged', 'true');
     localStorage.setItem('session_expire', date.toISOString().slice(0, 19).replace('T', ' '));
+    localStorage.setItem('user_type', '2');
   }
 
   public isSessionExpired():boolean {
@@ -54,10 +56,15 @@ export class AuthService {
     return false;
   }
 
+  public accountType(): number {
+    return parseInt(localStorage.getItem('user_type')!);
+  }
+
   public logout(): void {
     localStorage.removeItem('user');
     localStorage.removeItem('logged');
     localStorage.removeItem('session_expire');
+    localStorage.removeItem('user_type');
   }
 }
 

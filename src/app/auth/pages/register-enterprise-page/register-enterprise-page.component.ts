@@ -11,9 +11,9 @@ import { AuthService } from '../../services/auth.service';
 export class RegisterEnterprisePageComponent {
 
   public registerFormModel = {
-    name: '',
-    email: '',
-    password: '',
+    NAME: '',
+    EMAIL: '',
+    PASSWORD: '',
     confirmPassword: '',
   }
 
@@ -44,19 +44,19 @@ export class RegisterEnterprisePageComponent {
     const emailRegex = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$')
     const namesRegex = new RegExp('^[a-zA-ZÀ-ÿ\u00f1\u00d1 ]+$')
 
-    if(!data.email || !data.password || !data.confirmPassword || !data.name) {
+    if(!data.EMAIL || !data.PASSWORD || !data.confirmPassword || !data.NAME) {
       this.openSnackBar('Todos los campos son requeridos')
       return false
     } else {
-      if(data.password !== data.confirmPassword) {
+      if(data.PASSWORD !== data.confirmPassword) {
         this.openSnackBar('Las contraseñas no coinciden')
         return false
       } else {
-        if(!emailRegex.test(data.email)) {
+        if(!emailRegex.test(data.EMAIL)) {
           this.openSnackBar('El correo es inválido')
           return false
         } else {
-          if(!namesRegex.test(data.name)) {
+          if(!namesRegex.test(data.NAME)) {
             this.openSnackBar('El nombre solo puede contener letras')
             return false
           }

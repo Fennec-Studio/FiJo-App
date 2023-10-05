@@ -1,0 +1,9 @@
+.buttonMat {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+}
+
+.mat-mdc-menu-item:nth-child(2){
+  color : red;
+}

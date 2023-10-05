@@ -79,14 +79,14 @@
 
     <div class="mt-5 flex">
       <p class="text-sm text-slate-800 font-Poppins mr-2">¿No tienes cuenta?</p>
-      <a routerLink="/register-enterprise" class="text-sm font-medium text-Intense-Turquoise font-Poppins hover:text-Serene-Blue"
+      <a [routerLink]="['/register-enterprise']" class="text-sm font-medium text-Intense-Turquoise font-Poppins hover:text-Serene-Blue"
         href="#">
         Regístrate
       </a>
     </div>
     <div class="mt-5 flex">
       <p class="text-sm text-slate-800 font-Poppins mr-2">¿Eres candidato?</p>
-      <a routerLink="/login"
+      <a [routerLink]="['/login']"
         class="text-sm font-medium text-Intense-Turquoise font-Poppins hover:text-Serene-Blue" href="#">
         Iniciar sesión como candidato
       </a>

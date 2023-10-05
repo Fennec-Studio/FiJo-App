@@ -3,6 +3,7 @@ import { fromEvent } from 'rxjs/internal/observable/fromEvent';
 import { JobsService } from '../../../jobs/services/jobs.service';
 import { AuthService } from '../../../auth/services/auth.service';
 import { AccountService } from 'src/app/accounts/services/account.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'shared-navigation-bar',
@@ -15,7 +16,7 @@ export class NavigationBarComponent {
   public name: string = 'Felipe';
   public lastName: string = 'Ramirez';
 
-  constructor(private AuthService: AuthService, private _accountService: AccountService) {
+  constructor(private AuthService: AuthService, private _accountService: AccountService, private Router: Router) {
     this._authService = this.AuthService.isSessionExpired();
 
     fromEvent(document, 'scroll').subscribe(
@@ -25,6 +26,11 @@ export class NavigationBarComponent {
 
   get AccountData() {
     return this._accountService.getAccountData();
+  }
+
+  logOut() {
+    this.AuthService.logout();
+    this.Router.navigate(['/']);
   }
 
   getUserLogo() {
@@ -39,7 +45,9 @@ export class NavigationBarComponent {
 
   public scroll: boolean = false;
 
-
-
-  // isSesionExpired
+  getUserType(): number {
+    let type = 0;
+    type = parseInt(localStorage.getItem('user_type')!);
+    return type;
+  }
 }
