@@ -23,7 +23,7 @@
     </ng-container>
   </div>
   <div class="space-x-[10px]">
-    <ng-container *ngIf="_authService == true; else profile">
+    <ng-container *ngIf="_authService == true">
       <a
         routerLink="/register"
         class="px-5 py-[10px] rounded-3xl hover:bg-[#D4E0ED] text-lg transition-all duration-300">
@@ -35,20 +35,34 @@
         Iniciar sesión
       </a>
     </ng-container>
-    <ng-template #profile>
-      <a routerLink="/account/profile">
-        <div class="h-16 w-16 flex justify-center items-center rounded-full bg-pink-500 text-white text-3xl font-medium" *ngIf="gender == 0; else men">
-          <span>{{AccountData.firstName[0]}}</span>
-          <span>{{AccountData.lastName[0]}}</span>
-        </div>
-      </a>
-      <ng-template #men>
-        <div class="h-16 w-16 flex justify-center items-center rounded-full bg-cyan-500 text-white text-3xl font-medium">
-          <span>{{AccountData.firstName[0]}}</span>
-          <span>{{AccountData.lastName[0]}}</span>
-        </div>
-      </ng-template>
-    </ng-template>
+
+    <ng-container *ngIf="getUserType() === 2; then enterprise"></ng-container>
+
   </div>
 
 </div>
+
+
+<ng-template #profile>
+  <ng-container *ngIf="gender === 0; then female else men"></ng-container>
+  <ng-template #female>
+    <a routerLink="/account/profile">
+      <div class="h-16 w-16 flex justify-center items-center rounded-full bg-pink-500 text-white text-3xl font-medium">
+        <span>{{AccountData.firstName[0]}}</span>
+        <span>{{AccountData.lastName[0]}}</span>
+      </div>
+    </a>
+  </ng-template>
+  <ng-template #men>
+    <div class="h-16 w-16 flex justify-center items-center rounded-full bg-cyan-500 text-white text-3xl font-medium">
+      <span>{{AccountData.firstName[0]}}</span>
+      <span>{{AccountData.lastName[0]}}</span>
+    </div>
+  </ng-template>
+</ng-template>
+
+<ng-template #enterprise>
+  <a routerLink="/jobs/management">
+    <img src="{{AccountData.LOGO}}" alt="Logo de {{AccountData.NAME}}" class="rounded-full h-16 w-16 shadow-sm">
+  </a>
+</ng-template>
