@@ -12,16 +12,15 @@ import { AuthService } from '../../services/auth.service';
 export class RegisterEnterpriseDataPageComponent {
 
   public enterpriseInfoFormModel = {
-    address: '',
-    city: '',
-    state: '',
-    zipCode: '',
-    country: '',
-    phone: '',
-    logo: '',
-    description: '',
-    socialMedia: '',
-    role: 2,
+    ADDRESS: '',
+    CITY: '',
+    STATE: '',
+    ZIPCODE: '',
+    COUNTRY: '',
+    PHONE: '',
+    LOGO: '',
+    DESCRIPTION: '',
+    SOCIAL_MEDIA: ''
   }
 
   dataContact = {}
@@ -52,23 +51,23 @@ export class RegisterEnterpriseDataPageComponent {
   validateData(data: any): boolean {
     const namesRegex = new RegExp('^[a-zA-ZÀ-ÿ\u00f1\u00d1 ]+$')
 
-    if(!data.address || !data.city || !data.state || !data.zipCode || !data.country || !data.phone || !data.logo || !data.description || !data.socialMedia) {
+    if(!data.ADDRESS || !data.CITY || !data.STATE || !data.ZIPCODE || !data.COUNTRY || !data.PHONE || !data.LOGO || !data.DESCRIPTION || !data.SOCIAL_MEDIA) {
       this.openSnackBar('Todos los campos son requeridos')
       return false
     } else {
-      if(data.address.length < 5) {
+      if(data.ADDRESS.length < 5) {
         this.openSnackBar('La dirección debe tener al menos 5 caracteres')
         return false
-      } else if(data.city.length < 3) {
+      } else if(data.CITY.length < 3) {
         this.openSnackBar('La ciudad debe tener al menos 3 caracteres')
         return false
-      } else if(data.state.length < 3) {
+      } else if(data.STATE.length < 3) {
         this.openSnackBar('El estado debe tener al menos 3 caracteres')
         return false
-      } else if(data.zipCode.length < 4) {
+      } else if(data.ZIPCODE.length < 4) {
         this.openSnackBar('El código postal debe tener al menos 4 caracteres')
         return false
-      } else if(data.country.length < 3) {
+      } else if(data.COUNTRY.length < 3) {
         this.openSnackBar('El país debe tener al menos 3 caracteres')
         return false
       }

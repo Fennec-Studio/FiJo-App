@@ -29,8 +29,9 @@ export class AccountService {
     return this._http.post('https://countriesnow.space/api/v0.1/countries/state/cities', { "country": "Mexico", "state": state });
   }
 
-  getAccountData(): UserAccount  {
-    const user = localStorage.getItem('user');
-    return JSON.parse(user!);
+  getAccountData(): any  {
+      const user = localStorage.getItem('user');
+      return JSON.parse(user!);
+
   }
 }
