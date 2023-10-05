@@ -36,12 +36,16 @@
       </a>
     </ng-container>
     <ng-template #profile>
-      <a routerLink="/account/profile">
+      <button mat-button [matMenuTriggerFor]="menuProfile" class="buttonMat rounded-full">
         <div class="h-16 w-16 flex justify-center items-center rounded-full bg-pink-500 text-white text-3xl font-medium" *ngIf="gender == 0; else men">
           <span>{{AccountData.firstName[0]}}</span>
           <span>{{AccountData.lastName[0]}}</span>
         </div>
-      </a>
+      </button>
+      <mat-menu #menuProfile="matMenu">
+        <button mat-menu-item routerLink="/account/profile">Ver perfil</button>
+        <button mat-menu-item class="text-red-500" (click)="logOut()">Cerrar sesión</button>
+      </mat-menu>
       <ng-template #men>
         <div class="h-16 w-16 flex justify-center items-center rounded-full bg-cyan-500 text-white text-3xl font-medium">
           <span>{{AccountData.firstName[0]}}</span>
