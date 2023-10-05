@@ -56,6 +56,10 @@ export class AuthService {
     return false;
   }
 
+  public accountType(): number {
+    return parseInt(localStorage.getItem('user_type')!);
+  }
+
   public logout(): void {
     localStorage.removeItem('user');
     localStorage.removeItem('logged');
