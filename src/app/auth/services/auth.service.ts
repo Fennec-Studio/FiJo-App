@@ -64,6 +64,7 @@ export class AuthService {
     localStorage.removeItem('user');
     localStorage.removeItem('logged');
     localStorage.removeItem('session_expire');
+    localStorage.removeItem('user_type');
   }
 }
 
