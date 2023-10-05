@@ -14,19 +14,19 @@ export class AuthService {
   ) { }
 
   public validateUserLogin(data: LoginModel){
-    return this._http.post(`${this.baseUrl}/api/auth/login`, data)
+    return this._http.post(`${this.baseUrl}/auth/login`, data)
   }
 
   public registerUser(data: UserAccount){
-    return this._http.post(`${this.baseUrl}/api/auth/register`, data)
+    return this._http.post(`${this.baseUrl}/auth/register`, data)
   }
 
   public validateEnterpriseLogin(data: LoginModel){
-    return this._http.post(`${this.baseUrl}/api/auth/companies/login`, data)
+    return this._http.post(`${this.baseUrl}/auth/companies/login`, data)
   }
 
   public registerEnterprise(data: EnterpriseAccount){
-    return this._http.post(`${this.baseUrl}/api/auth/companies/insert`, data)
+    return this._http.post(`${this.baseUrl}/auth/companies/insert`, data)
   }
 
   public storeDataSession(data: UserAccount): void {
