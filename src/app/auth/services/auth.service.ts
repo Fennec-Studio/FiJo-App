@@ -35,6 +35,7 @@ export class AuthService {
     localStorage.setItem('user', JSON.stringify(data));
     localStorage.setItem('logged', 'true');
     localStorage.setItem('session_expire', date.toISOString().slice(0, 19).replace('T', ' '));
+    localStorage.setItem('user_type', '1');
   }
 
   public storeDataSessionEnterprise(data: EnterpriseAccount): void {
@@ -43,6 +44,7 @@ export class AuthService {
     localStorage.setItem('user', JSON.stringify(data));
     localStorage.setItem('logged', 'true');
     localStorage.setItem('session_expire', date.toISOString().slice(0, 19).replace('T', ' '));
+    localStorage.setItem('user_type', '2');
   }
 
   public isSessionExpired():boolean {
