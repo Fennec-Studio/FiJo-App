@@ -35,36 +35,48 @@
         Iniciar sesión
       </a>
     </ng-container>
-    <ng-container *ngIf="getUserType() === 2; then enterprise"></ng-container>
+    <ng-container *ngIf="getUserType() === 1; then profile else enterprise"></ng-container>
   </div>
 
 </div>
 
-    <ng-template #profile>
-      
-      <ng-container *ngIf="gender === 0; then female else men"></ng-container>
-      
-      <ng-template #female>
-        <button mat-button [matMenuTriggerFor]="menuProfile" class="buttonMat rounded-full">
-          <div class="h-16 w-16 flex justify-center items-center rounded-full bg-pink-500 text-white text-3xl font-medium" *ngIf="gender == 0; else men">
-            <span>{{AccountData.firstName[0]}}</span>
-            <span>{{AccountData.lastName[0]}}</span>
-          </div>
-        </button>
-        <mat-menu #menuProfile="matMenu">
-          <button mat-menu-item routerLink="/account/profile">Ver perfil</button>
-          <button mat-menu-item class="text-red-500" (click)="logOut()">Cerrar sesión</button>
-        </mat-menu>
-      </ng-template>
-      <ng-template #men>
-        <div class="h-16 w-16 flex justify-center items-center rounded-full bg-cyan-500 text-white text-3xl font-medium">
-          <span>{{AccountData.firstName[0]}}</span>
-          <span>{{AccountData.lastName[0]}}</span>
-        </div>
-      </ng-template>
+  <ng-template #profile>
 
-<ng-template #enterprise>
-  <a routerLink="/jobs/management">
-    <img src="{{AccountData.LOGO}}" alt="Logo de {{AccountData.NAME}}" class="rounded-full h-16 w-16 shadow-sm">
-  </a>
+  <ng-container *ngIf="gender === 0; then female else men"></ng-container>
+
+  <ng-template #female>
+    <button mat-button [matMenuTriggerFor]="menuProfile" class="buttonMat rounded-full">
+      <div class="h-16 w-16 flex justify-center items-center rounded-full bg-pink-500 text-white text-3xl font-medium" *ngIf="gender == 0; else men">
+        <span>{{AccountData.firstName[0]}}</span>
+        <span>{{AccountData.lastName[0]}}</span>
+      </div>
+    </button>
+    <mat-menu #menuProfile="matMenu">
+      <button mat-menu-item routerLink="/account/profile">Ver perfil</button>
+      <button mat-menu-item class="text-red-500" (click)="logOut()">Cerrar sesión</button>
+    </mat-menu>
+  </ng-template>
+  <ng-template #men>
+
+    <button mat-button [matMenuTriggerFor]="menuProfile" class="buttonMat rounded-full">
+      <div class="h-16 w-16 flex justify-center items-center rounded-full bg-cyan-500 text-white text-3xl font-medium">
+        <span>{{AccountData.firstName[0]}}</span>
+        <span>{{AccountData.lastName[0]}}</span>
+      </div>
+    </button>
+    <mat-menu #menuProfile="matMenu">
+      <button mat-menu-item routerLink="/account/profile">Ver perfil</button>
+      <button mat-menu-item class="text-red-500" (click)="logOut()">Cerrar sesión</button>
+    </mat-menu>
+  </ng-template>
 </ng-template>
+
+  <ng-template #enterprise>
+    <button mat-button [matMenuTriggerFor]="menuEnterprise" class="">
+      <img src="{{AccountData.LOGO}}" alt="Logo de {{AccountData.NAME}}" class="rounded-full h-16 w-16 shadow-sm">
+    </button>
+    <mat-menu #menuEnterprise="matMenu">
+      <button mat-menu-item routerLink="/jobs/management">Ver panel</button>
+      <button mat-menu-item class="text-red-500" (click)="logOut()">Cerrar sesión</button>
+    </mat-menu>
+  </ng-template>
