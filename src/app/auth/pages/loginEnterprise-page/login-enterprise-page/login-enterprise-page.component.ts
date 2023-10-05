@@ -23,11 +23,12 @@ export class LoginEnterprisePageComponent {
 
   public onLoginSubmit(): void {
     if(this.validateData(this.loginFormModel)) {
-      this._authService.validateUserLogin(this.loginFormModel).subscribe((response: any) => {
+      this._authService.validateEnterpriseLogin(this.loginFormModel).subscribe((response: any) => {
+        console.log(response);
         if(response.status == 200) {
           this.openSnackBar(response.message)
-          this._authService.storeDataSession(response.body)
-          this._router.navigate(['/account/profile'])
+          this._authService.storeDataSessionEnterprise(response.body)
+          this._router.navigate(['/jobs/management'])
         } else {
           this.openSnackBar(response.message)
         }

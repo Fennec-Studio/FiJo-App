@@ -45,7 +45,9 @@ export class NavigationBarComponent {
 
   public scroll: boolean = false;
 
-
-
-  // isSesionExpired
+  getUserType(): number {
+    let type = 0;
+    type = parseInt(localStorage.getItem('user_type')!);
+    return type;
+  }
 }
