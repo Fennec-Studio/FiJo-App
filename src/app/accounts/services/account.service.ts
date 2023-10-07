@@ -8,7 +8,7 @@ import { UserAccount } from 'src/app/shared/interfaces/UserAccount';
 })
 export class AccountService {
 
-  // private urlBase = `http://localhost:3000/`
+  // private urlBase = `http://localhost:3000`
   private urlBase = `http://api.fijo.site`
 
   public statesList: string[] = [
@@ -34,7 +34,7 @@ export class AccountService {
   }
 
   getProfileData(id: number) {
-    return this._http.get(`${this.urlBase}user/profile?id=${id}`);
+    return this._http.get(`${this.urlBase}/user/profile?id=${id}`);
   }
 
   getAccountData(): any  {
