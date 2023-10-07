@@ -8,8 +8,8 @@ import { UserAccount } from 'src/app/shared/interfaces/UserAccount';
 })
 export class AccountService {
 
-  private urlBase = `http://localhost:3000/`
-  // private urlBase = `http://api.fijo.site`
+  // private urlBase = `http://localhost:3000/`
+  private urlBase = `http://api.fijo.site`
 
   public statesList: string[] = [
     'Aguascalientes', 'Baja California', 'Baja California Sur',
