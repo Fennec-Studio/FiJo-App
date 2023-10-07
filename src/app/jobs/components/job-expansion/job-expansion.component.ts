@@ -2,7 +2,7 @@ import { JobsService } from './../../services/jobs.service';
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { dataJob } from '../../interface/jobs.interface';
+import { JobsInfo } from 'src/app/shared/interfaces/JobsInfo';
 
 @Component({
   selector: 'job-expansion',
@@ -15,13 +15,10 @@ export class JobExpansionComponent implements OnInit {
   panelOpenState = false;
 
   @Input()
-  public jobList: dataJob[] = [];
+  public jobList: JobsInfo[] = [];
 
   @Input()
   sizeOfDisplay: string = 'mobile' || 'desktop';
-
-  // @Input()
-  // public idJobSelected: number;
 
   idJobSelected: number = 0;
 
@@ -34,24 +31,9 @@ export class JobExpansionComponent implements OnInit {
 
   @Output()
   outputJobData = new EventEmitter<number>();
-  // public outputJobData: dataJob = {
-  //   jobID: 0,
-  //   jobImg: '',
-  //   jobTitle: '',
-  //   jobPayment: 0,
-  //   jobFrecuencyPayment: '',
-  //   jobLocation: '',
-  //   jobEnterprise: '',
-  //   jobContractType: '',
-  //   jobTime: '',
-  //   jobType: '',
-  //   jobDescription: '',
-  //   jobEnterpriseRate: 0,
-  // };
 
   sendDataCard(id: number) {
     this.idJobSelected = id;
     this.JobsService.idJob.next(this.idJobSelected);
-    console.log(this.jobList[id].jobID);
   }
 }

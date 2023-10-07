@@ -1,289 +1,92 @@
 <mat-accordion class="mat-accordion text-xl">
   <!--  -->
   <ng-container *ngIf="sizeOfDisplay == 'mobile'; else sinExpand" >
-    <mat-expansion-panel class="mat-expansion-panel" (click)="sendDataCard(job.jobID)" *ngFor="let job of jobList; let i = index">
+    <mat-expansion-panel class="mat-expansion-panel" (click)="sendDataCard(job.juid)" *ngFor="let job of jobList; let i = index">
       <mat-expansion-panel-header class="mat-expansion-panel-header">
         <mat-panel-title>
-          {{job.jobTitle}}
+          {{job.position}}
           <div class="mat-panel-description">
-            <p>{{job.jobEnterprise}}</p>
-            <p><i class="fa-solid fa-star text-yellow-400"></i> {{job.jobEnterpriseRate | number:'1.1'}}</p>
-            <p>{{job.jobLocation}}</p>
+            <p>{{job.bName}}</p>
+            <p><i class="fa-solid fa-star text-yellow-400"></i> {{job.rating | number:'1.1'}}</p>
+            <p>{{job.city}}, {{job.state}}.</p>
           </div>
         </mat-panel-title>
       </mat-expansion-panel-header>
       <hr>
       <div class="content-mat-accordion">
         <div class="content-mat-accordion-info">
-          <p>{{job.jobTitle}}</p>
+          <p>{{job.position}}</p>
           <!-- <p>en CDMX</p> -->
         </div>
         <div class="content-mat-accordion-img">
-          <img src="" alt="" [src]="job.jobImg">
+          <img src="" alt="" [src]="job.logo">
         </div>
       </div>
       <hr>
       <div class="content-mat-accordion-data block md:hidden">
         <div class="content-mat-accordion-category">
           <div class="category-content-mat">
-            <span>{{job.jobPayment | currency}}</span> (<span>{{job.jobFrecuencyPayment}}</span>)
+            <span>{{job.salary | currency}}</span> (<span>Mensual</span>)
             <!-- $ 34,000 (mensual) -->
           </div>
           <div class="category-content-mat">
-            {{job.jobContractType}}
+            {{job.mode}}
           </div>
           <div class="category-content-mat">
-            {{job.jobTime}}
+            {{job.turn}}
           </div>
           <div class="category-content-mat">
-            {{job.jobType}}
+            {{job.mode}}
           </div>
         </div>
         <div>
-          {{job.jobDescription}}
+          {{job.description}}
         </div>
       </div>
     </mat-expansion-panel>
   </ng-container>
-
-  <!-- <mat-expansion-panel class="mat-expansion-panel" *ngIf="sizeOfDisplay == 'mobile'; else sinExpand">
-    <mat-expansion-panel-header class="mat-expansion-panel-header">
-      <mat-panel-title>
-        Desarrollador Front End
-        <div class="mat-panel-description">
-          <p>Grupo FEMSA</p>
-          <p><i class="fa-solid fa-star text-yellow-400"></i> 4,8</p>
-          <p>Ciudad de México, CDMX, Lago Zurich</p>
-        </div>
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <hr>
-    <div class="content-mat-accordion">
-      <div class="content-mat-accordion-info">
-        <p>Desarrollador Front End</p>
-        <p>en CDMX</p>
-      </div>
-      <div class="content-mat-accordion-img">
-        <img src="/assets/img/companies/FEMSA_Logo.png" alt="">
-      </div>
-    </div>
-    <hr>
-    <div class="content-mat-accordion-data block md:hidden">
-      <div class="content-mat-accordion-category">
-        <div class="category-content-mat">
-          $ 34,000 (mensual)
-        </div>
-        <div class="category-content-mat">
-          Contrato por tiempo indeterminado
-        </div>
-        <div class="category-content-mat">
-          Tiempo completo
-        </div>
-        <div class="category-content-mat">
-          Híbrido
-        </div>
-      </div>
-      <div>
-        Empresa 100% Mexicana. Lider en Desarrollo, solicita:
-
-        Desarrollador Front End
-
-        Responsabilidades:
-        Traducir diseños a lenguaje de programación.
-        Dominar los lenguajes de programación HTML, CSS y JavaScript para poder aplicar el diseño a la web o app que se proponga.
-
-      </div>
-    </div>
-  </mat-expansion-panel>
-  <mat-expansion-panel class="mat-expansion-panel" *ngIf="sizeOfDisplay == 'mobile'; else sinExpand">
-    <mat-expansion-panel-header class="mat-expansion-panel-header">
-      <mat-panel-title>
-        Desarrollador Front End
-        <div class="mat-panel-description">
-          <p>Grupo FEMSA</p>
-          <p><i class="fa-solid fa-star text-yellow-400"></i> 4,8</p>
-          <p>Ciudad de México, CDMX, Lago Zurich</p>
-        </div>
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <hr>
-    <div class="content-mat-accordion">
-      <div class="content-mat-accordion-info">
-        <p>Desarrollador Front End</p>
-        <p>en CDMX</p>
-      </div>
-      <div class="content-mat-accordion-img">
-        <img src="/assets/img/companies/FEMSA_Logo.png" alt="">
-      </div>
-    </div>
-    <hr>
-    <div class="content-mat-accordion-data block md:hidden">
-      <div class="content-mat-accordion-category">
-        <div class="category-content-mat">
-          $ 34,000 (mensual)
-        </div>
-        <div class="category-content-mat">
-          Contrato por tiempo indeterminado
-        </div>
-        <div class="category-content-mat">
-          Tiempo completo
-        </div>
-        <div class="category-content-mat">
-          Híbrido
-        </div>
-      </div>
-      <div>
-        Empresa 100% Mexicana. Lider en Desarrollo, solicita:
-
-        Desarrollador Front End
-
-        Responsabilidades:
-        Traducir diseños a lenguaje de programación.
-        Dominar los lenguajes de programación HTML, CSS y JavaScript para poder aplicar el diseño a la web o app que se proponga.
-
-      </div>
-    </div>
-  </mat-expansion-panel>
-  <mat-expansion-panel class="mat-expansion-panel" *ngIf="sizeOfDisplay == 'mobile'; else sinExpand">
-    <mat-expansion-panel-header class="mat-expansion-panel-header">
-      <mat-panel-title>
-        Desarrollador Front End
-        <div class="mat-panel-description">
-          <p>Grupo FEMSA</p>
-          <p><i class="fa-solid fa-star text-yellow-400"></i> 4,8</p>
-          <p>Ciudad de México, CDMX, Lago Zurich</p>
-        </div>
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <hr>
-    <div class="content-mat-accordion">
-      <div class="content-mat-accordion-info">
-        <p>Desarrollador Front End</p>
-        <p>en CDMX</p>
-      </div>
-      <div class="content-mat-accordion-img">
-        <img src="/assets/img/companies/FEMSA_Logo.png" alt="">
-      </div>
-    </div>
-    <hr>
-    <div class="content-mat-accordion-data block md:hidden">
-      <div class="content-mat-accordion-category">
-        <div class="category-content-mat">
-          $ 34,000 (mensual)
-        </div>
-        <div class="category-content-mat">
-          Contrato por tiempo indeterminado
-        </div>
-        <div class="category-content-mat">
-          Tiempo completo
-        </div>
-        <div class="category-content-mat">
-          Híbrido
-        </div>
-      </div>
-      <div>
-        Empresa 100% Mexicana. Lider en Desarrollo, solicita:
-
-        Desarrollador Front End
-
-        Responsabilidades:
-        Traducir diseños a lenguaje de programación.
-        Dominar los lenguajes de programación HTML, CSS y JavaScript para poder aplicar el diseño a la web o app que se proponga.
-
-      </div>
-    </div>
-  </mat-expansion-panel>
-  <mat-expansion-panel class="mat-expansion-panel" *ngIf="sizeOfDisplay == 'mobile'; else sinExpand">
-    <mat-expansion-panel-header class="mat-expansion-panel-header">
-      <mat-panel-title>
-        Desarrollador Front End
-        <div class="mat-panel-description">
-          <p>Grupo FEMSA</p>
-          <p><i class="fa-solid fa-star text-yellow-400"></i> 4,8</p>
-          <p>Ciudad de México, CDMX, Lago Zurich</p>
-        </div>
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <hr>
-    <div class="content-mat-accordion">
-      <div class="content-mat-accordion-info">
-        <p>Desarrollador Front End</p>
-        <p>en CDMX</p>
-      </div>
-      <div class="content-mat-accordion-img">
-        <img src="/assets/img/companies/FEMSA_Logo.png" alt="">
-      </div>
-    </div>
-    <hr>
-    <div class="content-mat-accordion-data block md:hidden">
-      <div class="content-mat-accordion-category">
-        <div class="category-content-mat">
-          $ 34,000 (mensual)
-        </div>
-        <div class="category-content-mat">
-          Contrato por tiempo indeterminado
-        </div>
-        <div class="category-content-mat">
-          Tiempo completo
-        </div>
-        <div class="category-content-mat">
-          Híbrido
-        </div>
-      </div>
-      <div>
-        Empresa 100% Mexicana. Lider en Desarrollo, solicita:
-
-        Desarrollador Front End
-
-        Responsabilidades:
-        Traducir diseños a lenguaje de programación.
-        Dominar los lenguajes de programación HTML, CSS y JavaScript para poder aplicar el diseño a la web o app que se proponga.
-
-      </div>
-    </div>
-  </mat-expansion-panel> -->
   <ng-template #sinExpand>
     <ng-container *ngFor="let job of jobList; let i = index">
-      <mat-expansion-panel class="mat-expansion-panel" (click)="sendDataCard(job.jobID)" disabled>
+      <mat-expansion-panel class="mat-expansion-panel" (click)="sendDataCard(job.juid)" disabled>
         <mat-expansion-panel-header class="mat-expansion-panel-header">
           <mat-panel-title>
-            {{job.jobTitle}}
+            {{job.position}}
             <div class="mat-panel-description">
-              <p>{{job.jobEnterprise}}</p>
-              <p><i class="fa-solid fa-star text-yellow-400"></i> {{job.jobEnterpriseRate | number:'1.1'}}</p>
-              <p>{{job.jobLocation}}</p>
+              <p>{{job.bName}}</p>
+              <p><i class="fa-solid fa-star text-yellow-400"></i> {{job.rating | number:'1.1'}}</p>
+              <p>{{job.city}}, {{job.state}}.</p>
             </div>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <hr>
         <div class="content-mat-accordion">
           <div class="content-mat-accordion-info">
-            <p>{{job.jobTitle}}</p>
+            <p>{{job.position}}</p>
             <!-- <p>en CDMX</p> -->
           </div>
           <div class="content-mat-accordion-img">
-            <img src="" alt="" [src]="job.jobImg">
+            <img src="" alt="" [src]="job.logo">
           </div>
         </div>
         <hr>
         <div class="content-mat-accordion-data block md:hidden">
           <div class="content-mat-accordion-category">
             <div class="category-content-mat">
-              <span>{{job.jobPayment | currency}}</span> (<span>{{job.jobFrecuencyPayment}}</span>)
+              <span>{{job.salary | currency}}</span> (<span>Mensual</span>)
               <!-- $ 34,000 (mensual) -->
             </div>
             <div class="category-content-mat">
-              {{job.jobContractType}}
+              {{job.mode}}
             </div>
             <div class="category-content-mat">
-              {{job.jobTime}}
+              {{job.turn}}
             </div>
             <div class="category-content-mat">
-              {{job.jobType}}
+              {{job.mode}}
             </div>
           </div>
           <div>
-            {{job.jobDescription}}
+            {{job.description}}
           </div>
         </div>
       </mat-expansion-panel>
