@@ -17,7 +17,6 @@ export class RegisterPersonalComponent {
     zipCode: '',
     country: '',
     phone: '',
-    role: 1,
     age: 0,
     gender: 0,
   }

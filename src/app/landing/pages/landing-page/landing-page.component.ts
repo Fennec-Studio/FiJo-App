@@ -25,7 +25,11 @@ export class LandingPageComponent implements OnInit {
       this._router.navigate(['/login'])
       this._authService.logout()
     } else {
-      this._router.navigate(['/account/profile'])
+      if(this._authService.accountType() == 1){
+        this._router.navigate(['/account/profile'])
+      } else {
+        this._router.navigate(['/jobs/management'])
+      }
     }
   }
 

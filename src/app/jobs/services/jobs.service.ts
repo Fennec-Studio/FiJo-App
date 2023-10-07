@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 
 import { dataJob } from "../interface/jobs.interface";
 import { BehaviorSubject } from "rxjs";
+import { JobsInfo } from "src/app/shared/interfaces/JobsInfo";
 
 @Injectable({
   providedIn: 'root',
@@ -10,48 +11,32 @@ import { BehaviorSubject } from "rxjs";
 
 export class JobsService {
   private baseUrl = 'http://api.fijo.site';
+  // private baseUrl = 'http://localhost:3000';
+
   public idJob = new BehaviorSubject<number>(0);
-  
+
   constructor(
     private _http: HttpClient
   ) { }
 
   public getJobs(){
-    return this._http.get(`${this.baseUrl}/api/jobs/getall`)
+    return this._http.get(`${this.baseUrl}/jobs`)
   }
-  
-  public inputJobList: dataJob[] = [
-    {
-      jobID: 0,
-      jobImg: "/assets/img/companies/FEMSA_Logo.png",
-      jobTitle: "Desarrollador Frontend",
-      jobPayment: 15000,
-      jobFrecuencyPayment: "Quincenal",
-      jobLocation: "Ciudad de México, CDMX, Por Ahí",
-      jobEnterprise: "Grupo FEMSA",
-      jobContractType: "Contrato por tiempo indeterminado",
-      jobTime: "Tiempo completo",
-      jobType: "Presencial",
-      jobCreatedAt: "1 Octubre 2023",
-      jobDescription: "Empresa 100% Mexicana. Lider en Desarrollo, solicita: Desarrollador Front End Responsabilidades: Traducir diseños a lenguaje de programación. Dominar los lenguajes de programación HTML, CSS y JavaScript para poder aplicar el diseño a la web o app que se proponga.",
-      jobEnterpriseRate: 5,
-      // jobTags: ["HTML", "CSS", "JavaScript", "Frontend", "Desarrollador", "FEMSA", "Grupo FEMSA", "Tiempo completo", "Presencial", "Contrato por tiempo indeterminado", "Ciudad de México", "CDMX", "Lago Zurich"]
-    },
-    {
-      jobID: 1,
-      jobImg: "/assets/img/companies/Banco_Santander_Logotipo.png",
-      jobTitle: "Desarrollador Backend",
-      jobPayment: 40000,
-      jobFrecuencyPayment: "Mensual",
-      jobLocation: "Ciudad de México, CDMX, Lago Zurich",
-      jobEnterprise: "Banco Santander",
-      jobContractType: "Contrato por tiempo indeterminado",
-      jobTime: "Medio tiempo",
-      jobType: "Remoto",
-      jobCreatedAt: "1 Septiembre 2023",
-      jobDescription: "Empresa 100% Mexicana. Lider en Desarrollo, solicita: Desarrollador Back End Responsabilidades: Hacer cosas de Backend.",
-      jobEnterpriseRate: 4.5,
-      // jobTags: ["HTML", "CSS", "JavaScript", "
-    },
-  ]
+
+  public getJobsByBusinessID(id: number){
+    return this._http.get(`${this.baseUrl}/jobs/${id}`)
+  }
+
+  public getIDBusiness(): number {
+    let data = localStorage.getItem('user');
+    return JSON.parse(data!).buid;
+  }
+
+  public inputJobList(): JobsInfo[] {
+    let data: JobsInfo[] = [];
+    this.getJobs().subscribe((res: any) => {
+      data = res.body;
+    })
+    return data;
+  }
 }
