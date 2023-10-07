@@ -7,6 +7,7 @@ import { EnterpriseAccount } from 'src/app/shared/interfaces/EnterpriseAccount';
   providedIn: 'root'
 })
 export class AuthService {
+  // private baseUrl = 'http://localhost:3000';
   private baseUrl = 'http://api.fijo.site';
 
   constructor(
@@ -14,19 +15,19 @@ export class AuthService {
   ) { }
 
   public validateUserLogin(data: LoginModel){
-    return this._http.post(`${this.baseUrl}/auth/login`, data)
+    return this._http.post(`${this.baseUrl}/user/auth/login`, data)
   }
 
   public registerUser(data: UserAccount){
-    return this._http.post(`${this.baseUrl}/auth/register`, data)
+    return this._http.post(`${this.baseUrl}/user/auth/register`, data)
   }
 
   public validateEnterpriseLogin(data: LoginModel){
-    return this._http.post(`${this.baseUrl}/auth/companies/login`, data)
+    return this._http.post(`${this.baseUrl}/business/auth/login`, data)
   }
 
   public registerEnterprise(data: EnterpriseAccount){
-    return this._http.post(`${this.baseUrl}/auth/companies/insert`, data)
+    return this._http.post(`${this.baseUrl}/business/auth/register`, data)
   }
 
   public storeDataSession(data: UserAccount): void {
@@ -69,6 +70,6 @@ export class AuthService {
 }
 
 export interface LoginModel {
-  email: string;
-  password: string;
+  email?: string;
+  password?: string;
 }

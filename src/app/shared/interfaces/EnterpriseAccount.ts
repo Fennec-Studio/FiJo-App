@@ -1,19 +1,16 @@
 export interface EnterpriseAccount {
-  EID: number;
-  EMAIL: string;
-  PASSWORD: string;
-  NAME: string;
-  LOGO?: string;
-  CITY?: string;
-  STATE?: string;
-  COUNTRY?: string;
-  ADDRESS?: string;
-  ZIPCODE?: string;
-  RATING?: number;
-  DESCRIPTION?: string;
-  PHONE?: string;
-  SOCIAL_MEDIA?: string;
-  STATUS: number;
-  CREATEAT: Date;
-  UPDATEAT: Date;
+  buid: number;
+  email: string;
+  password: string;
+  bName: string;
+  logo?: string;
+  city?: string;
+  state?: string;
+  country?: string;
+  address?: string;
+  zipCode?: string;
+  rating?: number;
+  description?: string;
+  phone?: string;
+  socialMedia?: string;
 }

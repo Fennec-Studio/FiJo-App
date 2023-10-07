@@ -6,11 +6,14 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AccountService } from '../../services/account.service';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { ProfileFormComponent } from '../../components/profile-form/profile-form.component';
+import { UserAccount } from 'src/app/shared/interfaces/UserAccount';
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.component.html'
 })
 export class ProfilePageComponent {
+  public profileData: UserAccount = {} as UserAccount;
+
   constructor(
     private _accountService: AccountService,
     private _authService: AuthService,
@@ -18,25 +21,34 @@ export class ProfilePageComponent {
     private _dialogRef: MatDialog
   ) {}
 
-  get AccountData() {
-    return this._accountService.getAccountData();
+  AccountData() {
+    this._accountService.getProfileData(this._accountService.getAccountUUID()).subscribe((data: any) => {
+      this.profileData = data.body;
+    })
   }
 
   getUserLogo() {
     let logo = '';
-    const name = this.AccountData.firstName.split(' ');
-    const lastName = this.AccountData.lastName.split(' ');
-    logo += name[0].charAt(0);
-    logo += lastName[0].charAt(0);
-
+    if (this.profileData.firstName && this.profileData.lastName) {
+      const name = this.profileData.firstName.split(' ');
+      const lastName = this.profileData.lastName.split(' ');
+      logo += name[0].charAt(0);
+      logo += lastName[0].charAt(0);
+    } else {
+      logo += '';
+    }
     return logo.toUpperCase();
   }
 
   ngOnInit(): void {
-    console.log(this.AccountData);
     if(this._authService.isSessionExpired()) {
       this._router.navigate(['/login'])
       this._authService.logout()
+    } else {
+      if(this._authService.accountType() == 2){
+        this._router.navigate(['/jobs/management'])
+      }
+      this.AccountData();
     }
   }
 

@@ -1,9 +1,17 @@
 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 select-none justify-center font-Poppins bg-white container mx-auto shadow-sm m-3 p-3 border-gray-200 border">
   <app-job-card
-    *ngFor="let job of JobLists"
+    [ngClass]="{'hidden': (jobs.length == 0)}"
+    *ngFor="let job of jobs"
     [jobData]="job"
     class="border rounded-md shadow-sm p-2">
   </app-job-card>
+
+  <h3
+    class="col-span-3 text-xl text-gray-400 font-medium"
+    [ngClass]="{'hidden': (jobs.length != 0)}"
+    >
+    No se encontraron empleos para esta empresa
+  </h3>
 </div>
 
 <nav aria-label="Pagination" class="flex justify-end mt-5 m-3 container mx-auto">
