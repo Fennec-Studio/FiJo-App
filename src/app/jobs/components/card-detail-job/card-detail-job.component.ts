@@ -7,22 +7,13 @@ import { JobsInfo } from 'src/app/shared/interfaces/JobsInfo';
   templateUrl: './card-detail-job.component.html',
   styleUrls: ['./card-detail-job.component.css']
 })
-export class CardDetailJobComponent implements OnInit{
+export class CardDetailJobComponent{
 
-  @Input()
-  public jobList: JobsInfo[] = [];
 
-  @Input()
-  public jobSelected: number;
 
   constructor( private JobsService: JobsService) {
-    this.jobSelected = 0;
+
   }
 
-  ngOnInit(): void {
-    this.JobsService.idJob.subscribe((id) => {
-      this.jobSelected = id;
-      console.log(this.jobSelected);
-    });
-  }
+
 }

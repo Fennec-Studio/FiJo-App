@@ -1,15 +1,15 @@
 <div class="bg-white h-full w-full p-5 rounded-lg border border-gray-300 overflow-y-auto">
   <div class="w-[30%] py-5">
-    <img src="" alt="" [src]="jobList[jobSelected].logo">
+    <img src="/assets/img/companies/FEMSA_Logo.png" alt="" [src]="">
   </div>
   <div class="text-xl space-y-2.5">
-    <p class="font-medium">{{jobList[jobSelected].position}}</p>
-    <p class="font-medium"><span>{{jobList[jobSelected].salary | currency}}</span> (Mensual)</p>
+    <p class="font-medium">Desarrollador Frontend</p>
+    <p class="font-medium"><span>{{15000 | currency}}</span> (Mensual)</p>
     <div class="flex flex-row justify-start flex-wrap space-x-2 text-base font-normal">
-      <p>{{jobList[jobSelected-1].city}}, {{jobList[jobSelected].state}}</p> <p>•</p> <p>{{jobList[jobSelected].bName}}</p>
+      <p>Tampico, Tamaulipas</p> <p>•</p> <p>Grupo Femsa</p>
     </div>
     <div class="flex flex-row justify-start flex-wrap space-x-2 text-base font-normal">
-      <p>{{jobList[jobSelected-1].mode}}</p> <p>•</p> <p>{{jobList[jobSelected].turn}}</p> <p>•</p> <p>{{jobList[jobSelected].turn}}</p>
+      <p>Remoto</p> <p>•</p> <p>Medio tiempo</p> <p>•</p> <p>Contrato por tiempo indeterminado</p>
     </div>
     <div class="flex flex-row justify-start my-2">
       <button class="px-[15px] py-[5px] rounded-3xl bg-Intense-Turquoise hover:bg-[#0A585C] text-base text-white transition-all duration-300">
@@ -20,7 +20,7 @@
       <hr>
     </div>
     <div class="text-base">
-      {{jobList[jobSelected].description}}
+      Empresa 100% Mexicana. Lider en Desarrollo, solicita: Desarrollador Front End Responsabilidades: Traducir diseños a lenguaje de programación. Dominar los lenguajes de programación HTML, CSS y JavaScript para poder aplicar el diseño a la web o app que se proponga.
     </div>
   </div>
 </div>
