@@ -15,25 +15,14 @@ export class JobExpansionComponent implements OnInit {
   panelOpenState = false;
 
   @Input()
-  public jobList: JobsInfo[] = [];
-
-  @Input()
   sizeOfDisplay: string = 'mobile' || 'desktop';
-
-  idJobSelected: number = 0;
 
   constructor( private JobsService: JobsService) {}
 
   ngOnInit(): void {
-    this.sendDataCard,
-    this.JobsService.idJob.next(this.idJobSelected);
   }
 
-  @Output()
-  outputJobData = new EventEmitter<number>();
-
-  sendDataCard(id: number) {
-    this.idJobSelected = id;
-    this.JobsService.idJob.next(this.idJobSelected);
+  mathExpansion(id: number) {
+    console.log("Click al mat-expansion-panel " + id);
   }
 }
