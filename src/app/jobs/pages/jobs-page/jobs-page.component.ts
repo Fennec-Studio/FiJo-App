@@ -19,10 +19,6 @@ export class JobsPageComponent {
     this.mediaQuery();
   }
 
-  public recieveDataCard(job: number) {
-    console.log("Llamada a recieveDataCard");
-  }
-
   ngOnInit(): void {
     this.getJobs();
   }
