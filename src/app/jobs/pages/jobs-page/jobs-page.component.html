@@ -33,10 +33,10 @@
         <span class="mx-1">Trabajos de</span>
         <span class="font-semibold">Desarrollador web</span>
       </div>
-      <job-expansion [jobList]="inputJobList" [sizeOfDisplay]="sizeDisplay"></job-expansion>
+      <job-expansion [sizeOfDisplay]="sizeDisplay"></job-expansion>
     </div>
     <div class="hidden h-screen p-5 desktop:block desktop:w-[60%] desktop:sticky">
-      <card-detail-job (outputJobData)="recieveDataCard(idJob)" [jobSelected]="idJob" [jobList]="inputJobList"></card-detail-job>
+      <card-detail-job></card-detail-job>
     </div>
   </div>
 

@@ -1,92 +1,178 @@
 <mat-accordion class="mat-accordion text-xl">
   <!--  -->
   <ng-container *ngIf="sizeOfDisplay == 'mobile'; else sinExpand" >
-    <mat-expansion-panel class="mat-expansion-panel" (click)="sendDataCard(job.juid)" *ngFor="let job of jobList; let i = index">
+    <mat-expansion-panel class="mat-expansion-panel" (click)="mathExpansion(1)">
       <mat-expansion-panel-header class="mat-expansion-panel-header">
         <mat-panel-title>
-          {{job.position}}
+          Desarrollador Frontend
           <div class="mat-panel-description">
-            <p>{{job.bName}}</p>
-            <p><i class="fa-solid fa-star text-yellow-400"></i> {{job.rating | number:'1.1'}}</p>
-            <p>{{job.city}}, {{job.state}}.</p>
+            <p>Grupo FEMSA</p>
+            <p><i class="fa-solid fa-star text-yellow-400"></i> {{4.5 | number:'1.1'}}</p>
+            <p>Tampico, Tamaulipas.</p>
           </div>
         </mat-panel-title>
       </mat-expansion-panel-header>
       <hr>
       <div class="content-mat-accordion">
         <div class="content-mat-accordion-info">
-          <p>{{job.position}}</p>
+          <p>Desarrollador Frontend</p>
           <!-- <p>en CDMX</p> -->
         </div>
         <div class="content-mat-accordion-img">
-          <img src="" alt="" [src]="job.logo">
+          <img src="/assets/img/companies/FEMSA_Logo.png" alt="" [src]="">
         </div>
       </div>
       <hr>
       <div class="content-mat-accordion-data block md:hidden">
         <div class="content-mat-accordion-category">
           <div class="category-content-mat">
-            <span>{{job.salary | currency}}</span> (<span>Mensual</span>)
+            <span>{{15000 | currency}}</span> (<span>Mensual</span>)
             <!-- $ 34,000 (mensual) -->
           </div>
           <div class="category-content-mat">
-            {{job.mode}}
+            Remoto
           </div>
           <div class="category-content-mat">
-            {{job.turn}}
+            Medio tiempo
           </div>
           <div class="category-content-mat">
-            {{job.mode}}
+            Contrato por tiempo indeterminado
           </div>
         </div>
         <div>
-          {{job.description}}
+          Empresa 100% Mexicana. Lider en Desarrollo, solicita: Desarrollador Front End Responsabilidades: Traducir diseños a lenguaje de programación. Dominar los lenguajes de programación HTML, CSS y JavaScript para poder aplicar el diseño a la web o app que se proponga.
+        </div>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel class="mat-expansion-panel" (click)="mathExpansion(2)">
+      <mat-expansion-panel-header class="mat-expansion-panel-header">
+        <mat-panel-title>
+          Desarrollador Backend
+          <div class="mat-panel-description">
+            <p>DHL Express</p>
+            <p><i class="fa-solid fa-star text-yellow-400"></i> {{4.5 | number:'1.1'}}</p>
+            <p>Tampico, Tamaulipas.</p>
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <hr>
+      <div class="content-mat-accordion">
+        <div class="content-mat-accordion-info">
+          <p>Desarrollador Backend</p>
+          <!-- <p>en CDMX</p> -->
+        </div>
+        <div class="content-mat-accordion-img">
+          <img src="/assets/img/companies/DHL_Express_Logo.png" alt="" [src]="">
+        </div>
+      </div>
+      <hr>
+      <div class="content-mat-accordion-data block md:hidden">
+        <div class="content-mat-accordion-category">
+          <div class="category-content-mat">
+            <span>{{20000 | currency}}</span> (<span>Quincenal</span>)
+            <!-- $ 34,000 (mensual) -->
+          </div>
+          <div class="category-content-mat">
+            Presencial
+          </div>
+          <div class="category-content-mat">
+            Tiempo completo
+          </div>
+          <div class="category-content-mat">
+            Contrato por tiempo indeterminado
+          </div>
+        </div>
+        <div>
+          Empresa 100% Mexicana. Lider en Desarrollo, solicita: Desarrollador Front End Responsabilidades: Hacer cosas de backend
         </div>
       </div>
     </mat-expansion-panel>
   </ng-container>
   <ng-template #sinExpand>
-    <ng-container *ngFor="let job of jobList; let i = index">
-      <mat-expansion-panel class="mat-expansion-panel" (click)="sendDataCard(job.juid)" disabled>
+    <ng-container>
+      <mat-expansion-panel class="mat-expansion-panel" (click)="mathExpansion(1)" disabled>
         <mat-expansion-panel-header class="mat-expansion-panel-header">
           <mat-panel-title>
-            {{job.position}}
+            Desarrollador Frontend
             <div class="mat-panel-description">
-              <p>{{job.bName}}</p>
-              <p><i class="fa-solid fa-star text-yellow-400"></i> {{job.rating | number:'1.1'}}</p>
-              <p>{{job.city}}, {{job.state}}.</p>
+              <p>Grupo FEMSA</p>
+              <p><i class="fa-solid fa-star text-yellow-400"></i> {{4.5 | number:'1.1'}}</p>
+              <p>Tampico, Tamaulipas.</p>
             </div>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <hr>
         <div class="content-mat-accordion">
           <div class="content-mat-accordion-info">
-            <p>{{job.position}}</p>
+            <p>Desarrollador Frontend</p>
             <!-- <p>en CDMX</p> -->
           </div>
           <div class="content-mat-accordion-img">
-            <img src="" alt="" [src]="job.logo">
+            <img src="/assets/img/companies/FEMSA_Logo.png" alt="" [src]="">
           </div>
         </div>
         <hr>
         <div class="content-mat-accordion-data block md:hidden">
           <div class="content-mat-accordion-category">
             <div class="category-content-mat">
-              <span>{{job.salary | currency}}</span> (<span>Mensual</span>)
+              <span>{{15000 | currency}}</span> (<span>Mensual</span>)
               <!-- $ 34,000 (mensual) -->
             </div>
             <div class="category-content-mat">
-              {{job.mode}}
+              Remoto
             </div>
             <div class="category-content-mat">
-              {{job.turn}}
+              Medio tiempo
             </div>
             <div class="category-content-mat">
-              {{job.mode}}
+              Contrato por tiempo indeterminado
             </div>
           </div>
           <div>
-            {{job.description}}
+            Empresa 100% Mexicana. Lider en Desarrollo, solicita: Desarrollador Front End Responsabilidades: Traducir diseños a lenguaje de programación. Dominar los lenguajes de programación HTML, CSS y JavaScript para poder aplicar el diseño a la web o app que se proponga.
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel class="mat-expansion-panel" (click)="mathExpansion(2)" disabled>
+        <mat-expansion-panel-header class="mat-expansion-panel-header">
+          <mat-panel-title>
+            Desarrollador Backend
+            <div class="mat-panel-description">
+              <p>DHL Express</p>
+              <p><i class="fa-solid fa-star text-yellow-400"></i> {{4.5 | number:'1.1'}}</p>
+              <p>Tampico, Tamaulipas.</p>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr>
+        <div class="content-mat-accordion">
+          <div class="content-mat-accordion-info">
+            <p>Desarrollador Backend</p>
+            <!-- <p>en CDMX</p> -->
+          </div>
+          <div class="content-mat-accordion-img">
+            <img src="/assets/img/companies/DHL_Express_Logo.png" alt="" [src]="">
+          </div>
+        </div>
+        <hr>
+        <div class="content-mat-accordion-data block md:hidden">
+          <div class="content-mat-accordion-category">
+            <div class="category-content-mat">
+              <span>{{20000 | currency}}</span> (<span>Quincenal</span>)
+              <!-- $ 34,000 (mensual) -->
+            </div>
+            <div class="category-content-mat">
+              Presencial
+            </div>
+            <div class="category-content-mat">
+              Tiempo completo
+            </div>
+            <div class="category-content-mat">
+              Contrato por tiempo indeterminado
+            </div>
+          </div>
+          <div>
+            Empresa 100% Mexicana. Lider en Desarrollo, solicita: Desarrollador Front End Responsabilidades: Hacer cosas de backend
           </div>
         </div>
       </mat-expansion-panel>
